@@ -1,0 +1,206 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <title>
+        
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+	<header>
+		<!-- WEB-VIEW NAVIGATION BAR-->
+		<nav>
+				
+			    <div class="web-view">
+					
+					<a href="index.html">HOME</a>    
+			     </div>
+				 <div class="web-view"><a href="Notes.html">NOTES</a></div>
+				<div class="web-view"><a href="book.html">BOOKS</a></div>
+				<div class="web-view"><a href="pyq.html">PYQ</a></div>
+				<div class="web-view"><a href="about.html">ABOUT US</a></div>
+		        <div class="web-view" class="dropdwn" id="account"><img src="user-solid-24.png">
+		        <ul id="account-list">
+                      	<li><a href="sign in.html">Sign-in &nbsp &nbsp &nbsp &nbsp <hr></a>
+                      	<li><a href="sign up.html">Sign-up &nbsp &nbsp &nbsp &nbsp</a>
+                      </ul>	
+                  </div>
+		        
+				
+				<div id="menu"><img id="menu-icon" src="menuicon.png"></div>		
+		</nav>
+        <!--MOBILE-VIEW NAVIGATION BAR-->
+		<div class="menu-content" id="menu-List" >
+			<div class="border"><a href="index.html">HOME</a></div>
+			<div class="border"><a href="notes.html">NOTES</a></div>
+			<div class="border"><a href="book.html">BOOK</a></div>
+            <div class="border"><a href="pyq.html">PYQ</a></div>
+			<div class="border"><a href="about.html">ABOUT US</a></div>
+				
+				
+			
+		</div>	
+<!--Content Header-->
+	<div class="container" style="background-image: url('DSC01508.jpg'); background-size: cover;margin-top: 60px;">
+		<div class="content">
+		<h2>CENTRAL UNIVERSITY OF SOUTH BIHAR</h2>
+		<h3>Msc(CS) Study Material Portal</h3>
+		</div>	
+	</div>
+	 
+
+	</div>
+			
+    <!--MAIN CONTENT-->
+    
+    <main id="main">
+    	<br><br>
+		<h3 style="text-align: center;">Welcome to Msc(cs) Study Material Portal – Your Ultimate Academic Resource Hub!</h3>
+    	
+
+<!-- registration form-->
+<br><br><br><br>
+<div class="form-container" id="form" style="width: 80%;margin: auto;">	
+<p><h3>We are dedicated to supporting your educational journey by providing a comprehensive repository of essential course materials. Our platform is designed to be your one-stop solution for academic resources. Here’s what you can find:</h3></p>
+<br>
+<div><b>1. Course Notes : </b>
+	- Detailed Summaries: Find well-organized notes for various subjects and topics to help reinforce your understanding.<br>
+	- Class Notes : Access notes shared by fellow students or professors for different courses.
+ </div><br>
+ <div><b>2. Previous Year Question Papers:</b>
+	- Exam Preparation : Access past exam papers to familiarize yourself with question formats and practice effectively.<br>
+	- Solved Papers : Review solutions to previous year questions to understand problem-solving methods and exam strategies.
+ </div><br>
+ <div><b>3. Books and Textbooks:</b>
+   - Textbook Access : Browse and download textbooks required for your courses.<br>
+   - Reference Materials : Find additional books and reference materials to broaden your understanding of subjects.
+ </div><br><br>
+ <h3>How to Navigate Our Site:</h3><br>
+ <div><b>1. Explore Categories :</b> Use the categorized sections to find materials relevant to your courses and subjects.<br>
+ </div><br>
+ <div><b>2.Download & Access: </b>Easily download materials to your device for offline use and convenient study sessions.<br>
+ </div><br>
+<h3 style="text-align: center;"><br>Stay Connected : Share your suggestions or report issues to help us improve.</h3>
+</div>
+<footer>
+	<h2><br><br><br><u>CONTACT US</u><br><br></h2><hr>
+<div><br>For any questions or inquiries, You can reach out me at <a href="mailto:msccs2426studymaterial@gmail.com">email.</a></div><br>
+<div>We aim to make your study experience seamless and productive. <br><br>Thank you for visiting !</div>
+<div style="text-align: left; margin-left: 10vw;">
+<div><br><br>Regards<br>Satyam Kumar<br>MSC.CS(2024-2026),CUSB</div><br>
+</div>
+<div>Happy Learning !</div><br><hr><br><br>
+<div>Made with &#10084;&#65039; by Satyam</div>
+<div ><a href="https://www.instagram.com/satyamtheshiva?igsh=MW9maHB4cDdyMnJ6ZA=="><img src="icons8-instagram-36.png"></a><a href="https://www.facebook.com/profile.php?id=100016399607155&amp;mibextid=ZbWKwL"><img src="icons8-facebook-36.png"></a></a><a target="_blank" href="https://wa.me/+919523240066? text=Hii !"><img src="icons8-whatsapp-36.png"></a></h4></div>
+
+</footer>
+<a href="#main"><div class="arrow"><img src="arrow.png"></div></a> 
+<div style="font-size:15px;text-align: center;"><br><br><br><br>	
+	&#169Copyright 2024 Msc(cs) study material portal.All Rights Reserved.	
+	<br><br><br>	
+	 <h2 style="color: blue;">No. of Visitors :</h2>
+	 <br><br><br>
+</div>	
+
+		<br><br>
+		 				
+    </main>
+ 
+					
+
+<!-- js CODE-->
+	<script>
+		var flag=0
+     //MOBILE-VIEW MENU BAR JS COSE
+	   var a=document.querySelector("#menu")
+       a.addEventListener("click",function () {
+       if (flag == 0){
+		document.getElementById("menu-List").style.display="block"
+		document.getElementById("menu-icon").src="check-box.png"
+	    flag=1
+	   }else{
+		document.getElementById("menu-List").style.display="none"
+		document.getElementById("menu-icon").src="menuicon.png"
+	    flag=0
+	  }
+      })
+    //WEB-VIEW DROP-DOWN JS CODE
+       var b=document.querySelector("#dropdwn")
+       b.addEventListener("click",function () {
+       if (flag == 0){
+		document.getElementById("dropdwnlist").style.display="block"
+	    flag=1
+	   }else{
+		document.getElementById("dropdwnlist").style.display="none"
+	    flag=0
+	  }
+      })
+       //DARK MODE js CODE
+       var c=document.querySelector("#DarkMode")
+       c.addEventListener("click",function () {
+       if (flag == 0){
+       	document.getElementById("main").style.backgroundColor="#0B0B0B";
+       	document.getElementById("form").style.backgroundColor="#0B0B0B";
+        document.getElementById("Darkmode").src="sun-regular-24.png"
+        document.getElementById("main").style.color="white";
+        document.body.style.backgroundColor="black";
+		flag=1
+	   }else{
+		document.getElementById("main").style.backgroundColor="#DCF8F0";
+		document.getElementById("form").style.backgroundColor="#DCF8F0";
+		document.getElementById("Darkmode").src="sun-solid-24.png"
+		document.getElementById("main").style.color="black";
+		
+		
+	    flag=0
+	  }
+      })
+     //MOBILE-VIEW DROP-DOWN JS CODE
+       var d=document.querySelector("#dropdwnmenu")
+       d.addEventListener("click",function () {
+       if (flag == 0){
+		document.getElementById("dropdwnmenulist").style.display="block"
+	    flag=1
+	   }else{
+		document.getElementById("dropdwnmenulist").style.display="none"
+	    flag=0
+	  }
+      })
+
+    //slide-show
+       let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+       
+//---------------------------Account js bcode-------------------------------------------------------------	
+ var z=document.querySelector("#account")
+       z.addEventListener("click",function () {
+       if (flag == 0){
+		document.getElementById("account-list").style.display="block"
+	    flag=1
+	   }else{
+		document.getElementById("account-list").style.display="none"
+	    flag=0
+	  }
+      })         
+  </script>
+</body>
+</html>

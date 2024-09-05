@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<style>
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+h2{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+    margin-top: 20px;
+}
+h3{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+form{
+    margin-top: 10px;
+    margin-bottom: 100px;
+    border: 2px solid rgb(233, 227, 227);
+    text-emphasis: 20px;
+    display:inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color:hsla(249, 64%, 98%, 0.993);
+     margin-left: 20px ;
+     margin-right: 20px ;
+     padding-top: 20px;
+}
+p{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left:20px;
+     padding: 5px;
+     display: inline;
+}
+.red{
+    color:  red;
+    display: inline;
+}
+  
+b{
+    margin-left: 20px;
+    font-size: 20px;
+}
+ #state,input[type="text"],input[type="number"],input[type="email"]{
+   display: inline;
+    width: 97%;
+    padding: 12px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+    overflow: hidden; 
+    margin-left: 20px;
+    margin-right: 20px; 
+}  
+#input{
+
+    font-size: large;
+    font-weight: 1000;
+}
+ @media (max-width:600px){
+    #input{
+
+    font-size: 5vw;
+    width: fit-content;
+    font-weight: 1000;
+}
+ }
+</style>
+<title></title>
+
+<body>
+
+    <form action="">
+    <a href="index.html" style="text-decoration: none;color: initial;"><div style="position: absolute; font-size: large; font-weight: bold; border: 2px solid black;border-radius:50px; padding: 10px 15px; background-color: lightseagreen;text-decoration: none;text-align: center;">HOME<div><a>
+    <h2 style="text-align: center;text-decoration: underline;font-weight: bolder;"> Student Course Enquiry Form</h2>
+    <br>
+    <br>
+<p ><label for="">
+    Name of Student <div class="red">*</div> 
+    <input type="text" id="name" name="sname" placeholder="Enter your student name" required>
+</label></p>
+<p><label for="">
+    Address <div class="red">*</div> 
+    <input type="text" id="address" name="address" placeholder="Enter your address">
+</label></p>
+<p>Address: <textarea name="Address" id="Address" style="width:97%">Enter text</textarea></p>
+<p>
+    <label for="">
+    State <div class="red">*</div> 
+    <select name="state" id="state" required>
+         <option value="">Select State</option>
+         <option value="">Bihar</option>
+        <option value="">Uttar pradesh</option>
+        <option value="">Madhya pradesh</option>
+        <option value="">udisa</option>
+        <option value="">Goa</option>
+        <option value="">Assam</option>
+        <option value="">Maharashtra</option>
+        <option value="">Arunachal Pradesh</option>
+        <option value="">Chhattisgarh</option>
+        <option value="">Gujarat</option>
+        <option value="">Haryana</option>
+        <option value="">Kerala</option>
+        <option value="">Panjab</option>
+        <option value="">uttrakhand</option>
+        <option value="">Jharkhand</option>
+     </select>
+    </label>
+</p>
+<p>
+    <label for="">
+    Mobile Number <div class="red">*</div> 
+        <input type="number" id="smobile" name="number" placeholder="+91-xxxxxxxxxx" required>  
+    </label>
+</p>
+
+<p>
+    <label for="">
+        Email Id <div class="red">*</div> 
+        <input type="email" id="email id" placeholder="Enter your email id" required>
+    </label>
+</p>
+<p>
+    <label for="">
+         Course Name Interested to Join <div class="red">*</div> 
+         <select name="state" id="state" required>
+            <option value="">Select Course</option>
+            <option value="">BAmboo Crafing</option>
+           <option value="">Knitting</option>
+           <option value="">Weaving</option>
+           <option value="">Rajsthani Painting</option>
+           <option value="">Carpet Making</option>
+           <option value="">Wood carving</option>
+           <option value="">Painted wood vessel</option>
+           <option value="">Business setup</option>
+           <option value="">Start-up Ideas</option>
+           <option value="">if-other write in below box</option>
+        </select>
+    </label>
+</p>
+<p>
+    <label for="">
+         Message (IF Any) 
+        <input type="text" id="Regularity">
+    </label>
+</p>
+<div style="display: flex;justify-content: center;"> 
+<p><input type="submit" value="SUBMIT" id="input"> 
+</p>
+<p>
+   <input type="reset" value="RESET" id="input">
+</p>
+</div>
+</form>
+<br><br><br><br><br>
+
+<a href="index.html" style="text-decoration: none;color: initial;"><div style="position: absolute; right: 50%;margin-top: 50px; font-size: large; font-weight: bold; border: 2px solid black;border-radius:50px; padding: 10px 15px; background-color: lightseagreen;text-decoration: none;">HOME</div></a>
+<br><br><br><br><div style="font-size:15px; text-align:center;"><br><br> 
+    &#169Copyright 2023 TRADE SENSE.All Rights Reserved.    
+    <br><br><br><br>
+</body>
+</html>

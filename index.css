@@ -291,7 +291,7 @@ footer{
 	margin-top: 60px;
 	z-index: 2;
 }
-a{
+.border a{
 	text-decoration: none;
 	color: black;
 }

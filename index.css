@@ -6,6 +6,10 @@
 body{
 	background-color: #e3cab8;
 }
+.no-underline{
+			text-decoration: none;
+			color: blue;
+		}
 nav{
 	top: 0;
 	position: fixed;

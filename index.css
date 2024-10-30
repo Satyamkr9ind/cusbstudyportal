@@ -10,6 +10,15 @@ body{
 			text-decoration: none;
 			color: blue;
 		}
+.GeneratedMarquee {
+font-family:'Comic Sans MS';
+
+line-height:1.3em;
+color:#996600;
+background-color:#FFFFCC;
+padding:1.5em;
+
+}
 nav{
 	top: 0;
 	position: fixed;

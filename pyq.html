@@ -6,6 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Access comprehensive study materials for CUSB. Enhance your learning with notes, guides, and resources tailored for student success!" />
     <link rel="stylesheet" href="index.css">
+	<!-- News marquee-->
+<style>
+		.no-underline{
+			text-decoration: none;
+			color: blue;
+		}
+		.container1 { 
+position: relative; 
+  border:1px solid #777;  
+background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+  font-family:'Oswald',serif;
+} 
+
+.container1, .container1 .headertext { 
+padding: 7px; 
+background-color: #fff; 
+color: #626060; 
+font-weight: bold; 
+} 
+
+.container1 .headertext { 
+position: absolute; 
+top: 0; 
+left: 0; 
+z-index: 10; 
+padding: 10px 10px;
+border-right:1px solid #777;  
+background:#C8102E;
+ color:#fff ;
+    text-shadow: 1px 1px #111;
+} 
+
+.container1 marquee { 
+line-height: 1.5; 
+} 
+
+.container1 marquee p { 
+margin: 0; 
+
+} 
+
+</style>
+<!--end-->
     <!------------------------------------------------------------Style sheet for this Page------------------------------------------------------->
     <style>
     .heading{
@@ -200,9 +243,23 @@ font-size: 5vw;
 <!-------------------------------------------------------------------Main Content ------------------------------------------------->
 
 <main id="content">
-	<div><marquee class="GeneratedMarquee" behavior="alternate"direction="up" scrollamount="3" onmouseover="this.stop();"
-		onmouseout="this.start();"><h3 style="color: blue;"><img width="50" height="50" src="https://img.icons8.com/color-glass/50/new.png" alt="new"/><a href="https://csvidyalaya.com/" class="no-underline">Check out new site for class work question with solution ! [Click here .... ]</a></h3></marquee>
-	</div>	
+	<!--News Marquee-->		
+<link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+<div class="container1"> 
+<div class="headertext">Notice</div> 
+
+<div>
+<marquee style="width:100%;color:red;" 
+onmouseover="this.stop();" onmouseout="this.start();" 
+direction="left" behavior="scroll" scrollamount="7">
+<a href="https://csvidyalaya.com/" class="no-underline">📢&nbsp Check out new site for class work question with solution ! [Click here .... ] 
+</marquee>
+</div>
+
+</div> 
+
+
+<!-- end  -->	
 	<div>
 		<br>
 		<h4>Semester : 1</h4>

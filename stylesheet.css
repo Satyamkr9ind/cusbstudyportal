@@ -139,6 +139,7 @@ main {
   border-radius: 0.75rem;
   padding: 1.5rem;
   transition: transform 0.2s, box-shadow 0.2s;
+  list-style: none;
 }
 
 .course-list li:hover {

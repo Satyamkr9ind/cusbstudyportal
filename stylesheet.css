@@ -296,6 +296,7 @@ main {
     color: var(--text-primary);
     text-decoration: none;
     border-radius: 0.375rem;
+    z-index: 99;
   }
   
   .menu-content a:hover {

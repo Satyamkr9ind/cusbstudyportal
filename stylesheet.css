@@ -123,7 +123,6 @@ margin: 0;
   margin-top: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   display: none;
-  z-index: 99;
 }
 
 #account-list li {
@@ -289,6 +288,7 @@ main {
     padding: 1rem;
     border-top: 1px solid var(--border);
     display: none;
+    z-index: 99;
   }
   
   .menu-content a {

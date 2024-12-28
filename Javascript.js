@@ -42,7 +42,7 @@
             if (!scrollBtn) return;
         
             window.addEventListener('scroll', () => {
-                scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+                scrollBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
             });
         
             scrollBtn.addEventListener('click', (e) => {

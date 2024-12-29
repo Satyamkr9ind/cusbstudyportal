@@ -6,69 +6,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Access comprehensive study materials for CUSB. Enhance your learning with notes, guides, and resources tailored for student success!" />
     <link rel="stylesheet" href="stylesheet.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap' rel='stylesheet'>
     <style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-.price {
-  color: grey;
-  font-size: 22px;
-}
+        body {
+            background-color: #f5f7fa;
+        }
 
-.card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color:#2563eb;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
+       
+        /* Main Content */
+        #content {
+            margin-top: 80px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.card button:hover {
-  opacity: 0.7;
-}
-* {
-  box-sizing: border-box;
-}
+        
 
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  font-size: 30px;
-  text-align: center;
-}
+        /* Course Cards */
+        .semester-section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-.flex-item-left {
-  background-color: white;
-  padding: 10px;
-  flex: 50%;
-}
+        .semester-section h4 {
+            color: #1a1a1a;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
 
-.flex-item-right {
-  background-color:white;
-  padding: 10px;
-  flex: 50%;
-}
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
 
-/* Responsive layout - makes a one column-layout instead of two-column layout */
-@media (max-width: 768px) {
-  .flex-container {
-    flex-direction: column;
-  }
-}
+        .course-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .course-content {
+            padding: 1.5rem;
+        }
+
+        .course-title {
+            font-size: 1.25rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .course-description {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .view-button {
+            background: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .view-button:hover {
+            background: #1d4ed8;
+        }
+
+        /* Coming Soon */
+        .coming-soon {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+            font-size: 1.25rem;
+            background: #f8fafc;
+            border-radius: 10px;
+        }
+
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            #content {
+                padding: 1rem;
+            }
+
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
-
-</head>
+    </head>
 <body>
-<header>
+    <header>
         <nav class="web-nav">
             <div class="nav-container">
                 <div class="nav-links">
@@ -79,14 +143,14 @@
                     <a href="about.html">ABOUT US</a>
                 </div>
                 <div class="account-dropdown" id="account">
-                    <img src="user-solid-24.png" alt="Account" width="24" height="24">
+                    <img src="F:\Msc cs website\user-solid-24.png" alt="Account" width="24" height="24">
                     <ul id="account-list">
                         <li><a href="sign-in.html">Sign in</a></li>
                         <li><a href="sign-up.html">Sign up</a></li>
                     </ul>
                 </div>
                 <button id="menu" aria-label="Menu">
-                    <img id="menu-icon" src="menuicon.png" alt="" width="24" height="24">
+                    <img id="menu-icon" src="images/menuicon.png" alt="" width="24" height="24">
                 </button>
             </div>
         </nav>
@@ -99,9 +163,8 @@
             <a href="about.html">ABOUT US</a>
         </div>
     </header>
-
     <main id="content">
-         <!--News Marquee-->		
+        <!--News Marquee-->		
 <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
 <div class="container1"> 
 <div class="headertext">Notice</div> 
@@ -113,201 +176,166 @@ direction="left" behavior="scroll" scrollamount="7">
 <a href="https://csvidyalaya.com/" class="no-underline">📢&nbsp Check out new site for class work question with solution ! [Click here .... ] 
 </marquee>
 </div>
-
-</div> 
-
-
-<!-- end  -->
+</div>
+<br><br><br>
 
 
-<main id="content">
-     
-    <div class="container">
-        <div class="semester-section">
+        <section class="semester-section">
             <h4>Semester 1</h4>
-            <hr>
-            <ul class="course-list">
-                <li>
-                    <span class="course-name">Computer Network</span>
-                    <div class="flex-container">
-                        <div class="flex-item-left">
-                          <div class="card">
-                              <img src="cn.jpeg" alt="Computer Network Book" style="width:100%">
-                              <h1>Behrouz A. Forouzan</h1>
-                              <p>Fourth Edition</p>
-                              <p><button>Click here to view</button></p>
-                            </div>
-                        </div>
-                        <div class="flex-container">
-                            <div class="flex-item-right">
-                              <div class="card">
-                                  <img src="cn2.jpeg" alt="Computer Network Book" style="width:100%">
-                                  <h1>Behrouz A. Forouzan</h1>
-                                  <p>Ninth Edition</p>
-                                  <p><button>Click here to view</button></p>
-                                </div>
-                            </div>
-                            
+            <div class="course-grid">
+                <div class="course-card">
+                    <img src="F:\Msc cs website\cn.jpeg" alt="Computer Networks">
+                    <div class="course-content">
+                        <h3 class="course-title">Computer Networks</h3>
+                        <p class="course-description">Behrouz A. Forouzan[fouth Edition]</p>
+                        <button class="view-button">Click here to View</button>
                     </div>
-                    
-                </li>
-                <li>
-                    <span class="course-name">Data Structure And Algorithm</span>
-                    <div class="flex-container">
-                        <div class="flex-item-left">
-                          <div class="card">
-                              <img src="jeans3.jpg" alt="DSA Book" style="width:100%">
-                              <h1>Tailored Jeans</h1>
-                              <p class="price">$19.99</p>
-                              <p>Some text about the jeans..</p>
-                              <p><button>Click here to view</button></p>
-                            </div>
-                        </div>
-                        <div class="flex-container">
-                            <div class="flex-item-right">
-                              <div class="card">
-                                  <img src="jeans3.jpg" alt="DSA Book" style="width:100%">
-                                  <h1>Seymour Lipschutz</h1>
-                                  <p class="price">$19.99</p>
-                                  <p>Some text about the jeans..</p>
-                                  <p><button>Click here to view</button></p>
-                                </div>
-                            </div>
-                            
+                </div>
+                <div class="course-card">
+                    <img src="F:\Msc cs website\cn2.jpeg" alt="Advanced Networking">
+                    <div class="course-content">
+                        <h3 class="course-title">Computer Networks</h3>
+                        <p class="course-description">Behrouz A. Forouzan[ninth Edition]</p>
+                        <button class="view-button">Click here to View</button>
                     </div>
-                </li>
-                <li>
-                    <span class="course-name">Operating System</span>
-                    <div class="flex-container">
-                        <div class="flex-item-left">
-                          <div class="card">
-                              <img src="jeans3.jpg" alt="OS Book" style="width:100%">
-                              <h1>Abraham Silberschatz</h1>
-                              <p class="price">$19.99</p>
-                              <p>Some text about the jeans..</p>
-                              <p><button>Click here to view</button></p>
-                            </div>
-                        </div>
-                        <div class="flex-container">
-                            <div class="flex-item-right">
-                              <div class="card">
-                                  <img src="jeans3.jpg" alt="OS Book" style="width:100%">
-                                  <h1>William Stallings</h1>
-                                  <p class="price">$19.99</p>
-                                  <p>Some text about the jeans..</p>
-                                  <p><button>Click here to view</button></p>
-                                </div>
-                            </div>
-                            
-                    </div>
-                </li>
-                <li>
-                    <span class="course-name">Indian Knowledge System in CS</span>
-                    <div class="flex-container">
-                        <div class="flex-item-left">
-                          <div class="card">
-                              <img src="jeans3.jpg" alt="IKS Book" style="width:100%">
-                              <h1>Tailored Jeans</h1>
-                              <p class="price">$19.99</p>
-                              <p>Some text about the jeans..</p>
-                              <p><button>Click here to view</button></p>
-                            </div>
-                        </div>
-                        <div class="flex-container">
-                            <div class="flex-item-right">
-                              <div class="card">
-                                  <img src="jeans3.jpg" alt="IKS Book" style="width:100%">
-                                  <h1>Tailored Jeans</h1>
-                                  <p class="price">$19.99</p>
-                                  <p>Some text about the jeans..</p>
-                                  <p><button>Click here to view</button></p>
-                                </div>
-                            </div>
-                            
-                    </div>
-                </li>
-                <li>
-                    <span class="course-name">Human Value and Professional Ethics</span>
-                    <div class="flex-container">
-                        <div class="flex-item-left">
-                          <div class="card">
-                              <img src="jeans3.jpg" alt="HVPE Book" style="width:100%">
-                              <h1>RR. Gaur</h1>
-                              <p class="price">$19.99</p>
-                              <p>Some text about the jeans..</p>
-                              <p><button>Click here to view</button></p>
-                            </div>
-                        </div>
-                        <div class="flex-container">
-                            <div class="flex-item-right">
-                              <div class="card">
-                                  <img src="jeans3.jpg" alt="HVPE Book" style="width:100%">
-                                  <h1>Tailored Jeans</h1>
-                                  <p class="price">$19.99</p>
-                                  <p>Some text about the jeans..</p>
-                                  <p><button>Click here to view</button></p>
-                                </div>
-                            </div>
-                            
-                    </div>
-                </li>
-                <li>
-                    <span class="course-name">Ancient Physics</span>
-                    <div class="flex-container">
-                        <div class="flex-item-left">
-                          <div class="card">
-                              <img src="jeans3.jpg" alt="HVPE Book" style="width:100%">
-                              <h1>Bhagwad Geeta</h1>
-                              <p class="price">$19.99</p>
-                              <p>Some text about the jeans..</p>
-                              <p><button>Click here to view</button></p>
-                            </div>
-                        </div>
-                        <div class="flex-container">
-                            <div class="flex-item-right">
-                              <div class="card">
-                                  <img src="jeans3.jpg" alt="HVPE Book" style="width:100%">
-                                  <h1>Tailored Jeans</h1>
-                                  <p class="price">$19.99</p>
-                                  <p>Some text about the jeans..</p>
-                                  <p><button>Click here to view</button></p>
-                                </div>
-                            </div>
-                            
-                    </div>
-                </li>
-            </ul>
-        </div>
+                </div>
+            </div>
 
-        <div class="semester-section">
+            <div class="course-grid">
+                <div class="course-card">
+                    <img src="F:\Msc cs website\DSA.jpeg" alt="Data Structure And Algorithm">
+                    <div class="course-content">
+                        <h3 class="course-title">Data Structure And Algorithm</h3>
+                        <p class="course-description">Seymour Lipschutz</p>
+                        <button class="view-button">Click here to View</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="F:\Msc cs website\OS galvein.jpeg" alt="Operating System">
+                    <div class="course-content">
+                        <h3 class="course-title">Operating System</h3>
+                        <p class="course-description">Abraham Silberschatz</p>
+                        <button class="view-button">Click here to View</button>
+                    </div>
+                </div>
+            </div>
+            <div class="course-grid">
+                <div class="course-card">
+                    <img src="F:\Msc cs website\os stallin.jpeg"alt="Operating System">
+                    <div class="course-content">
+                        <h3 class="course-title">Operating System</h3>
+                        <p class="course-description">William Stallings</p>
+                        <button class="view-button">Click here to View</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="F:\Msc cs website\HVPE.jpeg" alt="Human Value and Professional Ethics">
+                    <div class="course-content">
+                        <h3 class="course-title">Human Value and Professional Ethics</h3>
+                        <p class="course-description">RR. Gaur</p>
+                        <button class="view-button">Click here to View</button>
+                    </div>
+                </div>
+            </div>
+            <div class="course-grid">
+                <div class="course-card">
+                    <img src="/cn.jpeg" alt="Human Value and Professional Ethics">
+                    <div class="course-content">
+                        <h3 class="course-title">Human Value and Professional Ethics</h3>
+                        <p class="course-description">Not Available</p>
+                        <button class="view-button">Click here to View</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="F:\Msc cs website\Bhagwat geeta.jpeg" alt="Ancient Physics">
+                    <div class="course-content">
+                        <h3 class="course-title">Ancient Physics</h3>
+                        <p class="course-description">Bhagwad Geeta</p>
+                        <button class="view-button">Click here to View</button>
+                    </div>
+                </div>
+<!--            </div>
+            <div class="course-grid">
+                <div class="course-card">
+                    <img src="/cn.jpeg" alt="Computer Networks">
+                    <div class="course-content">
+                        <h3 class="course-title">Computer Networks</h3>
+                        <p class="course-description">Fundamentals and Core Concepts of Computer Networks</p>
+                        <button class="view-button">Click here to View</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="/cn2.jpeg" alt="Advanced Networking">
+                    <div class="course-content">
+                        <h3 class="course-title">Advanced Networking</h3>
+                        <p class="course-description">Advanced Topics in Computer Networks</p>
+                        <button class="view-button">Click here to View</button>
+                    </div>
+                </div>
+            </div>
+            <div class="course-grid">
+                <div class="course-card">
+                    <img src="/cn.jpeg" alt="Computer Networks">
+                    <div class="course-content">
+                        <h3 class="course-title">Computer Networks</h3>
+                        <p class="course-description">Fundamentals and Core Concepts of Computer Networks</p>
+                        <button class="view-button">Click here to View</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="/cn2.jpeg" alt="Advanced Networking">
+                    <div class="course-content">
+                        <h3 class="course-title">Advanced Networking</h3>
+                        <p class="course-description">Advanced Topics in Computer Networks</p>
+                        <button class="view-button">Click here to View</button>
+                    </div>
+                </div>
+            </div>
+            <div class="course-grid">
+                <div class="course-card">
+                    <img src="/cn.jpeg" alt="Computer Networks">
+                    <div class="course-content">
+                        <h3 class="course-title">Computer Networks</h3>
+                        <p class="course-description">Fundamentals and Core Concepts of Computer Networks</p>
+                        <button class="view-button">Click here to View</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="/cn2.jpeg" alt="Advanced Networking">
+                    <div class="course-content">
+                        <h3 class="course-title">Advanced Networking</h3>
+                        <p class="course-description">Advanced Topics in Computer Networks</p>
+                        <button class="view-button">Click here to View</button>
+                    </div>
+                </div>
+            </div>-->
+        </section>
+
+        <section class="semester-section">
             <h4>Semester 2</h4>
-            <hr>
             <div class="coming-soon">Coming Soon!</div>
-        </div>
+        </section>
 
-        <div class="semester-section">
+        <section class="semester-section">
             <h4>Semester 3</h4>
-            <hr>
             <div class="coming-soon">Coming Soon!</div>
-        </div>
+        </section>
 
-        <div class="semester-section">
+        <section class="semester-section">
             <h4>Semester 4</h4>
-            <hr>
             <div class="coming-soon">Coming Soon!</div>
-        </div>
-    </div>
-</main>
+        </section>
+    </main>
+
 <footer>
         <div class="footer-content">
             <h3>Made with ❤️ by Satyam</h3>
             <p>©Copyright 2024 MSc(CS) study material portal. All Rights Reserved.</p>
         </div>
         <a href="#content" class="scroll-top">
-            <img src="arrow.png" alt="Scroll to top">
+            <img src="F:\Msc cs website\arrow.png" alt="Scroll to top">
         </a>
-    </footer>
-
-    <script src="Javascript.js"></script>
+</footer>
+<script src="Javascript.js"></script>
 </body>
 </html>

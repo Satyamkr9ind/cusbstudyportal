@@ -156,3 +156,11 @@ body {
 .modal-feedback-container::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+@media (max-width: 768px) {
+    .modal-content {
+        margin-top: 150px;
+    }
+    
+
+}
+

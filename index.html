@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="feedcss.css">
 	<meta name="description" content="Access comprehensive study materials for CUSB. Enhance your learning with notes, guides, and resources tailored for student success!" />
 	<style>
         /* Base Styles */
@@ -340,24 +341,46 @@ direction="left" behavior="scroll" scrollamount="7">
     </section>
        <h3 style="text-align: center;"><br>Stay Connected : Share your suggestions or report issues to help us improve.</h3>
        </div>
+<!--feed back form-->
+     <section class="feedback-section">
+        <h2>Feedback & Queries</h2>
+		<form method="post" action="https://script.google.com/macros/s/AKfycbyTfZn8YsCOgqbp_xlAkwSytyHEXidEeLQQdvkYM9wA3BA7HflfuRgfMqHckk_hXGdQ/exec" name="contact-form" class="feedback-form" id="feedbackForm">
+			<input type="text" name="Name" placeholder="Name" required>
+			<input type="email" name="Email" placeholder="Email" required><br>
+				<select id="type" name="Type" required>
+					<option value="">Select Type</option>
+					<option value="Feedback">Feedback</option>
+					<option value="Query">Query</option>
+					<option value="Suggestion">Suggestion</option>
+				</select>
+			</div>
+			<textarea name="Message" rows="7" placeholder="Your Message" required></textarea>
+			<div class="form-group">
+				<label for="timestamp"><h6>Submission Time:</h6></label>
+				<input type="text" id="timestamp" name="Date" readonly>
+			</div>
+			<button type="submit" value="Submit" id="submit">Submit</button>
+		</form>
+      </section>  
+<!--end-->
+<!--feedback display-->
+<aside class="feedback-sidebar">
+    <div class="feedback-header">
+        <h2>feedback & Queries</h2>
+    </div>
+    <div class="feedback-container" id="feedbackContainer"></div>
+    <button id="viewAllBtn">View All</button>
+</aside>
 
-        <section class="feedback-section">
-            <h2>Feedback & Queries</h2>
-            <form class="feedback-form" id="feedbackForm">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <select name="type" required>
-                    <option value="">Select Type</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="query">Query</option>
-                    <option value="suggestion">Suggestion</option>
-                </select>
-                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
 
-            <div class="feedback-list" id="feedbackList"></div>
-        </section>
+<div id="feedbackModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>All Feedback & Queries</h2>
+        <div class="modal-feedback-container" id="allFeedbackContainer"></div>
+    </div>
+</div>
+
     </main>
     <span style="text-align: center;">
     <div>We aim to make your study experience seamless and productive. <br><br>Thank you for visiting !</div>
@@ -366,7 +389,6 @@ direction="left" behavior="scroll" scrollamount="7">
     </div>
     <div><b>Happy Learning !</b></div><br><br>
     
-</span>
 
 <!--    footer start  ------------->
     <div class="footer">
@@ -433,47 +455,9 @@ direction="left" behavior="scroll" scrollamount="7">
 
         // Initialize slideshow
         showSlides();
-
-        // Feedback functionality
-        const feedbackForm = document.getElementById('feedbackForm');
-        const feedbackList = document.getElementById('feedbackList');
-        let feedbacks = JSON.parse(localStorage.getItem('feedbacks') || '[]');
-
-        function displayFeedbacks() {
-            feedbackList.innerHTML = feedbacks.map(feedback => `
-                <div class="feedback-item">
-                    <div class="feedback-header">
-                        <h4>${feedback.name}</h4>
-                        <span class="feedback-type">${feedback.type}</span>
-                        <span class="feedback-date">${feedback.date}</span>
-                    </div>
-                    <p>${feedback.message}</p>
-                </div>
-            `).join('');
-        }
-
-        feedbackForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            
-            const feedback = {
-                name: formData.get('name'),
-                type: formData.get('type'),
-                message: formData.get('message'),
-                date: new Date().toLocaleDateString()
-            };
-
-            feedbacks.unshift(feedback);
-            localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
-            displayFeedbacks();
-            
-            e.target.reset();
-            alert('Thank you for your feedback!');
-        });
-
-        // Display existing feedbacks on load
-        displayFeedbacks();
-    </script>
+</script>
  <script src="Javascript.js"></script>    
+ <script src="feedform.js"></script>  
+ <script src="feedbackdisplay.js"></script>
 </body>
 </html>

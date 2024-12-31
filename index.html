@@ -6,237 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css">
-    <link rel="stylesheet" href="feedcss.css">
-	<meta name="description" content="Access comprehensive study materials for CUSB. Enhance your learning with notes, guides, and resources tailored for student success!" />
-	<style>
-        /* Base Styles */
-        :root {
-            --primary-color: #4f46e5;
-            --text-color: #1f2937;
-            --bg-color: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            color: var(--text-color);
-            line-height: 1.5;
-        }
-
-        
-        /* Hero Section */
-        .hero {
-            margin-top: 4rem;
-            padding: 4rem 2rem;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('DSC01508.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Contributors Slideshow */
-        .slideshow-container {
-            max-width: 800px;
-            margin: 2rem auto;
-            position: relative;
-            background: #f8fafc;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .contributor-slide {
-            display: none;
-            text-align: center;
-            padding: 1rem;
-        }
-
-        .contributor-slide.active {
-            display: block;
-        }
-
-        .contributor-slide img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-            object-fit: cover;
-        }
-
-        /* Features Section */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem auto;
-            max-width: 1200px;
-            padding: 0 2rem;
-        }
-
-        .feature-card {
-            padding: 2rem;
-            border-radius: 0.5rem;
-            background: #f9fafb;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Feedback Section */
-        .feedback-section {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 2rem;
-            background: #f8fafc;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .feedback-form {
-            display: grid;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .feedback-form input,
-        .feedback-form select,
-        .feedback-form textarea {
-            padding: 0.75rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 4px;
-            width: 100%;
-        }
-
-        .feedback-form button {
-            background: var(--primary-color);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .feedback-form button:hover {
-            background-color: #4338ca;
-        }
-
-        .feedback-list {
-            margin-top: 2rem;
-        }
-
-        .feedback-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 6px;
-            margin-bottom: 1rem;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-        }
-
-        .feedback-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .feedback-type {
-            background: #e0e7ff;
-            color: #4f46e5;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-        }
-
-        /* Footer */
-        .footer {
-            background: #f3f4f6;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content1 {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-section1 h3 {
-            color: var(--text-color);
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .social-links img {
-            width: 24px;
-            height: 24px;
-        }
-
-        .copyright {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .mobile-menu.active + .nav-links {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--bg-color);
-                padding: 1rem;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="newfeed.css">
+    <meta name="description" content="Access comprehensive study materials for CUSB. Enhance your learning with notes, guides, and resources tailored for student success!" />
+	
 </head>
 <body>
     <header>
@@ -279,7 +51,7 @@
         <br><br><h2 style="text-align: center;">Welcome to Msc(cs) Study Material Portal – Your Ultimate Academic Resource Hub!</h2><br><br>
         <!--News Marquee-->		
 <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-<div class="container1"> 
+<div class="container2"> 
 <div class="headertext">Notice</div> 
 
 <div>
@@ -363,24 +135,26 @@ direction="left" behavior="scroll" scrollamount="7">
 		</form>
       </section>  
 <!--end-->
-<!--feedback display-->
-<aside class="feedback-sidebar">
-    <div class="feedback-header">
-        <h4>feedback & Queries</h4>
-    </div>
-    <div class="feedback-container" id="feedbackContainer"></div>
-    <button id="viewAllBtn">View All</button>
-</aside>
+<div class="feed-container">
+    <aside class="feedback-sidebar">
+        <div class="feedback-header">
+            <h2>Customer Feedback</h2>
+        </div>
+        <div class="feedback-container" id="feedbackContainer"></div>
+        <div class="view-all-button-container">
+            <button id="viewAllBtn">View All</button>
+        </div>
+    </aside>
 
-
-<div id="feedbackModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>All Feedback & Queries</h2>
-        <div class="modal-feedback-container" id="allFeedbackContainer"></div>
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>All Customer Feedback</h2>
+            <div class="modal-feedback-container" id="allFeedbackContainer"></div>
+        </div>
     </div>
 </div>
-
+<!--feedback display-->
     </main>
     <span style="text-align: center;">
     <div>We aim to make your study experience seamless and productive. <br><br>Thank you for visiting !</div>
@@ -397,7 +171,7 @@ direction="left" behavior="scroll" scrollamount="7">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="https://csvidyalaya.com/">Class work Question Solution</a></li>
-                    <li><a href="#books">Reference Books</a></li>
+                    <li><a href="Miscellaneous.html">Miscellaneous</a></li>
                     <li><a href="#pyq">Previous Year Questions</a></li>
                     <li><a href="#about">About Us</a></li>
                 </ul>
@@ -458,6 +232,6 @@ direction="left" behavior="scroll" scrollamount="7">
 </script>
  <script src="Javascript.js"></script>    
  <script src="feedform.js"></script>  
- <script src="feedbackdisplay.js"></script>
+ <script src="newfeed.js"></script>
 </body>
 </html>

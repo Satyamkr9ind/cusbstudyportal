@@ -10,7 +10,7 @@
             darkModeToggle.addEventListener('click', () => {
                 isDarkMode = !isDarkMode;
                 document.body.classList.toggle('dark-mode', isDarkMode);
-                darkModeToggle.src = isDarkMode ? 'sun-regular-24.png' : 'sun-solid-24.png';
+                darkModeToggle.src = isDarkMode ? 'images/sun-regular-24.png' : 'images/sun-solid-24.png';
             });
         }
         
@@ -26,7 +26,7 @@
                 menuOpen = !menuOpen;
                 menuList.style.display = menuOpen ? 'block' : 'none';
                 const menuIcon = document.querySelector('#menu-icon');
-                menuIcon.src = menuOpen ? 'check-box.png' : 'menuicon.png';
+                menuIcon.src = menuOpen ? 'images/check-box.png' : 'images/menuicon.png';
             });
         
             accountBtn?.addEventListener('click', () => {

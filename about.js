@@ -7,7 +7,7 @@ const teamMembers = [
     social: {
       instagram: "https://www.instagram.com/satyamtheshiva",
       facebook: "https://www.facebook.com/profile.php?id=100016399607155",
-      whatsapp: "https://wa.me/+919523240066"
+      linkedin: "https://www.linkedin.com/in/satyam-kumar-83a77b340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     }
   },
   {
@@ -17,7 +17,7 @@ const teamMembers = [
     social: {
       instagram: "https://www.instagram.com/i_am_skr_26",
       facebook: "https://www.facebook.com/sunnykumarranjan.sunny.71",
-      whatsapp: "https://wa.me/+917970945863"
+      linkedin: "https://www.linkedin.com/in/sunny-kumar-652b08319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     }
   }
 ];
@@ -87,10 +87,8 @@ function renderTeamSection() {
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
             </svg>
           </a>
-          <a href="${member.social.whatsapp}" target="_blank" rel="noopener noreferrer" class="social-link">
-            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-            </svg>
+          <a href="${member.social.linkedin}" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg fill="#000000" width="24px" height="24px" viewBox="0 0 0.72 0.72" xmlns="http://www.w3.org/2000/svg"><g id="LinkedIn"><g><path d="M0.553 0.092H0.167a0.075 0.075 0 0 0 -0.075 0.075v0.386a0.075 0.075 0 0 0 0.075 0.075h0.386a0.075 0.075 0 0 0 0.075 -0.075V0.167a0.075 0.075 0 0 0 -0.075 -0.075m0.045 0.461a0.045 0.045 0 0 1 -0.045 0.045H0.167a0.045 0.045 0 0 1 -0.045 -0.045V0.167a0.045 0.045 0 0 1 0.045 -0.045h0.386a0.045 0.045 0 0 1 0.045 0.045Z"/><g><path d="M0.191 0.322a0.03 0.03 0 1 1 0.06 0v0.195a0.03 0.03 0 0 1 -0.06 0Z"/><path cx="7.376" cy="6.744" r="1" d="M0.251 0.202A0.03 0.03 0 0 1 0.221 0.232A0.03 0.03 0 0 1 0.191 0.202A0.03 0.03 0 0 1 0.251 0.202z"/><path d="M0.529 0.401v0.116a0.03 0.03 0 1 1 -0.06 0v-0.116a0.048 0.048 0 1 0 -0.097 0v0.116a0.03 0.03 0 0 1 -0.06 0v-0.195a0.03 0.03 0 0 1 0.03 -0.03 0.028 0.028 0 0 1 0.025 0.014 0.108 0.108 0 0 1 0.162 0.095"/></g></g></g></svg>
           </a>
         </div>
       </div>

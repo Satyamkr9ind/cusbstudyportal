@@ -3,7 +3,7 @@ const teamMembers = [
   {
     name: "Satyam Kumar",
     role: "Designer & Developer",
-    image: "satyam.jpg",
+    image: "my photo.png",
     social: {
       instagram: "https://www.instagram.com/satyamtheshiva",
       facebook: "https://www.facebook.com/profile.php?id=100016399607155",

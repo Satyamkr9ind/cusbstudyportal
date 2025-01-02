@@ -193,7 +193,9 @@ h2 {
 .notification:hover {
     background: var(--gray-light);
 }
-
+.notification-content{
+    color: blue;
+}
 /* Forms */
 .form-group {
     margin-bottom: 15px;

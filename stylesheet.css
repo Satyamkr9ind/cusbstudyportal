@@ -264,7 +264,7 @@ margin: 0;
 #account-list {
   position: absolute;
   top: 100%;
-  right: 0;
+ /* right: 0;*/
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 0.5rem;

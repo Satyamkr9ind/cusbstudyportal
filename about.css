@@ -1,4 +1,12 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
 
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
 /* Reset and Base Styles */
 body {
   margin: 0;
@@ -454,4 +462,10 @@ body {
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(255,255,255,0.1);
+}
+@media screen and (max-width: 1024px) {
+  body {
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+  }
 }

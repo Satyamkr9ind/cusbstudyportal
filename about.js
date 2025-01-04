@@ -3,7 +3,7 @@ const teamMembers = [
   {
     name: "Satyam Kumar",
     role: "Designer & Developer",
-    image: "my photo.png",
+    image: "satyam.jpg",
     social: {
       instagram: "https://www.instagram.com/satyamtheshiva",
       facebook: "https://www.facebook.com/profile.php?id=100016399607155",
@@ -146,4 +146,37 @@ function initNavigation() {
 // Initialize all modules when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
+});
+
+
+// Navigation functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const accountIcon = document.querySelector('.account-icon');
+  const accountMenu = document.querySelector('.account-menu');
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  // Toggle account menu
+  accountIcon.addEventListener('click', () => {
+      accountMenu.classList.toggle('active');
+  });
+
+  // Close account menu when clicking outside
+  document.addEventListener('click', (e) => {
+      if (!accountIcon.contains(e.target) && !accountMenu.contains(e.target)) {
+          accountMenu.classList.remove('active');
+      }
+  });
+
+  // Toggle mobile menu
+  hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.remove('active');
+      }
+  });
 });

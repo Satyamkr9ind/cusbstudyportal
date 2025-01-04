@@ -45,16 +45,19 @@ body {
   right: 0;
   background: var(--card-bg);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+  padding: 1rem 0; /* Remove horizontal padding */
   z-index: 100;
+  width: 100%;
 }
 
 .nav-container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem; /* Add padding here instead */
 }
 
 .nav-links {
@@ -83,7 +86,7 @@ body {
 #account-list {
   position: absolute;
   top: 100%;
- /* right: 0;*/
+  right: 0;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 0.5rem;
@@ -501,3 +504,24 @@ body {
   }
 }
 
+.web-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0; /* Remove horizontal padding */
+  z-index: 100;
+  width: 100%;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem; /* Add padding here instead */
+}

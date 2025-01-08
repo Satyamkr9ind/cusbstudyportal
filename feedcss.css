@@ -26,6 +26,7 @@ body {
     padding: 20px;
     position: relative;
     height: 350px;
+    overflow:hidden;
 }
 
 .feedback-header {

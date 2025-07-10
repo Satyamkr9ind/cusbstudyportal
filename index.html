@@ -243,6 +243,18 @@ direction="left" behavior="scroll" scrollamount="7">
             <p>© 2024 MSc(CS) Study Material Portal. All Rights Reserved.</p>
         </div>
     </div>-->
+	    <script>
+function testNotification() {
+  if (window.Android && typeof window.Android.showNotification === 'function') {
+    Android.showNotification("Test: Notification from button");
+  } else {
+    console.log("Android interface not available");
+  }
+}
+</script>
+
+<button onclick="testNotification()">Send Test Notification</button>
+
    <script>
         // Slideshow functionality
         let slideIndex = 0;

@@ -7,7 +7,7 @@ function notifyAppOfChange(message) {
 
 let debounceTimer;
 
-const targetNode = document.getElementById('officialNotification');
+const targetNode = document.getElementById('notificationContent');
 
 if (targetNode) {
   const observer = new MutationObserver((mutationsList) => {

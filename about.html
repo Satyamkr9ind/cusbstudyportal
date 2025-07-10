@@ -98,6 +98,30 @@
 <div style="height: 100px;">
   <h1 style="text-align: center;">Thank you for visting us!<br><br><br></h1>
 </div> 
+    <!-- app notice --->	    
+<div id="app-install-banner" style="display:none; background:#1976d2; color:white; padding:10px; text-align:center; font-family:sans-serif; position: fixed; bottom: 0; width: 100%; z-index: 9999;">
+  📱 CUSB Study Material Portal is also on Android — 
+  <a href="https://drive.google.com/file/d/1dAlMULF6NCGfIgPUkAZQ-dW5Ae_xHLjB/view?usp=sharing" target="_blank" style="color:#ffc107; font-weight:bold; text-decoration:none;">Click here to install</a>
+  <button id="closeBanner" style="margin-left: 15px; background:none; border:none; color:white; font-size:16px; cursor:pointer;">✖</button>
+</div>
+
+<script>
+  // Function to detect Android WebView
+  function isAndroidWebView() {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    // Checks typical WebView user agent patterns on Android
+    return (ua.includes('wv') || ua.includes('Android') && ua.includes('Version/') && !ua.includes('Chrome'));
+  }
+
+  if (!isAndroidWebView()) {
+    // Show banner only if NOT inside Android WebView (i.e. normal browser)
+    document.getElementById('app-install-banner').style.display = 'block';
+  }
+
+  document.getElementById('closeBanner').onclick = function() {
+    document.getElementById('app-install-banner').style.display = 'none';
+  };
+</script>
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">

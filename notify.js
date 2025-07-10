@@ -7,21 +7,23 @@ function notifyAppOfChange(message) {
 
 let debounceTimer;
 
-const targetNode = document.getElementById('notificationContent');
+window.addEventListener('load', function () {
+  const targetNode = document.getElementById('notificationContent');  // OR 'officialNotification', whichever you use
 
-if (targetNode) {
-  const observer = new MutationObserver((mutationsList) => {
-    if (debounceTimer) clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => {
-      notifyAppOfChange('New content is uploaded... check it out !');
-    }, 1000);
-  });
+  if (targetNode) {
+    const observer = new MutationObserver(() => {
+      if (debounceTimer) clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        notifyAppOfChange('New content is uploaded... check it out !');
+      }, 1000);
+    });
 
-  observer.observe(targetNode, {
-    childList: true,
-    characterData: true,
-    subtree: true
-  });
-} else {
-  console.warn('Element with id "officialNotification" not found.');
-}
+    observer.observe(targetNode, {
+      childList: true,
+      characterData: true,
+      subtree: true
+    });
+  } else {
+    console.warn('Element with id "notificationContent" not found.');
+  }
+});

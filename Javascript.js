@@ -1,51 +1,54 @@
-<!-- BEGIN: Extra Mobile UI for Android WebView only -->
-<div id="webviewUI" style="display: none;">
 
-  <!-- Brand Logo Top Left -->
-  <div class="mobile-top-logo">
-    <span class="brand-logo">
-  <img src="C:\Users\satya\Desktop\Voult.png" alt="Logo" class="logo-img" /></span>
+// Detect Android WebView
+const isWebView = (() => {
+  const ua = navigator.userAgent || "";
+  const isAndroid = /Android/i.test(ua);
+  const isWV = /wv/.test(ua) || /\bVersion\/[\d.]+ Mobile\b/.test(ua);
+  return isAndroid && isWV;
+})();
 
-  </div>
+// Toggle UI visibility based on WebView detection
+const webviewUI = document.getElementById("webviewUI");
+const browserOnlyMsg = document.getElementById("browserOnlyMsg");
+if (webviewUI) webviewUI.style.display = isWebView ? "block" : "none";
+if (browserOnlyMsg) browserOnlyMsg.style.display = isWebView ? "none" : "block";
 
-  <!-- Bell Icon Top Right -->
-  <div class="mobile-top-bell">
-    <span class="bell-icon"><a href="Miscellaneous.html#office-notice">🔔</a></span>
-  </div>
+// Category Ring Toggle
+const categoryBtn = document.getElementById("categoriesBtn");
+const categoryRing = document.getElementById("categoryRing");
 
-  <!-- Category Ring -->
-  <div class="category-ring" id="categoryRing">
-    <div class="ring-bubble" style="--i:0;"><a href="Notes.html">📗<br> Notes</a></div>
-    <div class="ring-bubble" style="--i:1;"><a href="book.html">📘<br>Book</a></div>
-    <div class="ring-bubble" style="--i:2;"><a href="mailto:msccs2426studymaterial@gmail.com">❓<br> Contact<br>US</a></div>
-    <div class="ring-bubble" style="--i:3;"><a href="https://csvidyalaya.com/">🧪<br></a>Solved <br>paper</div>
-    <div class="ring-bubble" style="--i:4;"><a href="Miscellaneous.html">📁<br> Misc</a></div>
-    <div class="ring-bubble" style="--i:5;"><a href="https://drive.google.com/drive/folders/17LoT-rVQM0wvmfzm_6lVYdh8FSTuaBm_?usp=sharing">📈<br> Syllabus</a></div>
-  </div>
+if (categoryBtn && categoryRing) {
+  categoryBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    categoryRing.classList.toggle("show");
+  });
 
-  <!-- Bottom Navigation -->
-  <div class="mobile-bottom-nav">
-    <a href="index.html">🏠<br>Home</a>
-    <a href="Notes.html">📚<br>Notes</a>
-    <a href="javascript:void(0);" id="categoriesBtn">🌀<br>Categories</a>
-    <a href="pyq.html">❓<br>PYQ</a>
-    <a href="javascript:void(0);" id="accountBtn">👤<br>Account</a>
-  </div>
+  document.addEventListener("click", (e) => {
+    if (
+      categoryRing.classList.contains("show") &&
+      !categoryRing.contains(e.target) &&
+      e.target !== categoryBtn
+    ) {
+      categoryRing.classList.remove("show");
+    }
+  });
+}
 
-  <!-- Sidebar -->
-  <div class="sidebar" id="accountSidebar">
-    <div class="sidebar-content">
-      <span class="close-btn" id="closeSidebar">×</span>
-      <h3>Account</h3>
-      <a href="https://script.google.com/macros/s/AKfycbyrJ4mQinaXn7DmJOl-PoBuWcgzYUOGIh1OkLoIKSMN4dverejZVUktzLRXdhXZsEEw9Q/exec">Sign in as Admin</a>
-      <a href="sign-up.html">Sign in as User</a>
-      <a href="about.html">About Us</a>
-    </div>
-  </div>
+// Sidebar Toggle
+const accountBtn = document.getElementById("accountBtn");
+const closeBtn = document.getElementById("closeSidebar");
+const sidebar = document.getElementById("accountSidebar");
 
-</div>
-<!-- END -->
-
+if (accountBtn && sidebar) {
+  accountBtn.addEventListener("click", () => {
+    sidebar.classList.add("active");
+  });
+}
+if (closeBtn && sidebar) {
+  closeBtn.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+  });
+}
         // Dark Mode functionality
         function initDarkMode() {
             const darkModeToggle = document.querySelector('#DarkMode');

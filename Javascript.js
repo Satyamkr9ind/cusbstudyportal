@@ -4,14 +4,16 @@ const isWebView = (() => {
   const ua = navigator.userAgent || "";
   const isAndroid = /Android/i.test(ua);
   const isWV = /wv/.test(ua) || /\bVersion\/[\d.]+ Mobile\b/.test(ua);
-  return isAndroid && isWV;
+  return true;
 })();
 
-// Toggle UI visibility based on WebView detection
+// Toggle visibility for WebView-only UI
 const webviewUI = document.getElementById("webviewUI");
-const browserOnlyMsg = document.getElementById("browserOnlyMsg");
+const defaultNavbar = document.getElementById("defaultNavbar");
+
 if (webviewUI) webviewUI.style.display = isWebView ? "block" : "none";
-if (browserOnlyMsg) browserOnlyMsg.style.display = isWebView ? "none" : "block";
+if (defaultNavbar) defaultNavbar.style.display = isWebView ? "none" : "block";
+
 
 // Category Ring Toggle
 const categoryBtn = document.getElementById("categoriesBtn");

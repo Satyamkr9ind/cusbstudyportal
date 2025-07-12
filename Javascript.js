@@ -76,7 +76,7 @@ function closeOthers(current) {
 }
 
 // === Category Toggle ===
-if (categoryBtn1 && categoryRing) {
+if (categoryBtn && categoryRing) {
   categoryBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     const isOpen = categoryRing.classList.contains("show");
@@ -129,8 +129,8 @@ if (accountBtn && sidebar) {
   });
 }
 
-if (closeBtn && sidebar) {
-  closeBtn.addEventListener("click", () => {
+if (closeBtn1 && sidebar) {
+  closeBtn1.addEventListener("click", () => {
     fadeOut(sidebar, "sidebar");
   });
 }

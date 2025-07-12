@@ -522,18 +522,7 @@ margin: 0;
   cursor: pointer;
 }
 
-/* Brand Logo Top Left */
-.mobile-top-logo {
-  position: fixed;
-  top: 10px;
-  left: 15px;
-  z-index: 101;
-}
-.brand-logo {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-}
+
 
 /* Bottom Nav */
 .mobile-bottom-nav {
@@ -625,5 +614,23 @@ a{
   cursor: pointer;
 }
 
+
+/* Brand Logo Top Left */
+.mobile-top-logo {
+  position: fixed;
+  top: 10px;
+  left: 15px;
+  z-index: 101;
+}
+.brand-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+.logo-img {
+  height: 60px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
 
    

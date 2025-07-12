@@ -613,32 +613,40 @@ a{
   right: 15px;
   cursor: pointer;
 }
-
-
 /* Brand Logo Top Left */
 .mobile-top-logo {
   position: fixed;
-  top: 5px;
-  left: 15px;
+  top: 10px;
+  left: 20px;
   z-index: 101;
 }
-.brand-logo {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-}
-.logo-img {
-  height: 60px;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-.webviewUI-container{
-  max-width: 1200px;
-  margin: 0 auto;
+
+
+
+/* Fixed white top navbar for WebView */
+.webview-top-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  z-index: 1000;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}   
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
+/* Logo image */
+.logo-img {
+  height: 45px;
+}
 
-   
+/* Bell icon */
+.bell-icon {
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+}

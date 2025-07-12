@@ -223,6 +223,59 @@ line-height: 1.5;
 margin: 0; 
 
 } 
+#account-list {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  min-width: 180px;
+  display: none;
+  z-index: 9999;
+  overflow: hidden;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Show when dropdown is active */
+.account-dropdown.show #account-list {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) { /* Tablets landscape */
+  #account-list {
+    right: 10px;
+    left: auto;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 768px) { /* Tablets portrait, small tablets */
+  #account-list {
+    right: 5px;
+    left: auto;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 600px) { /* Mobile */
+  #account-list {
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    min-width: 90vw;
+    max-width: 95vw;
+  }
+}
+
+@media (max-width: 400px) { /* Small phones */
+  #account-list {
+    min-width: 95vw;
+  }
+}
 
 /*--------------------end-----------*/
 
@@ -509,4 +562,413 @@ margin: 0;
   }
 }
 
-   
+
+/* ---------------------------------------------Bell Icon Top Right(andriod)___________________________________________________________________ */
+/* Bottom Nav */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ccc;
+  font-size: 12px;
+  text-align: center;
+  padding: 8px 0;
+  z-index: 100;
+}
+.mobile-bottom-nav a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Category Ring */
+.category-ring {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-18%);
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  z-index: 999;
+}
+.ring-bubble {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  font-size: small;
+  background: #f5f5f5;
+  border-radius: 50%;
+  text-align: center;
+  /*line-height: 20px;*/
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transform: rotate(calc(var(--i) * 60deg)) translateY(-80px);
+  transform-origin: center bottom;
+  opacity: 0;
+  transition: 0.4s ease;
+  
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.category-ring.show .ring-bubble {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  z-index: 1200;
+}
+.sidebar.active {
+  right: 0;
+}
+.sidebar-content {
+  padding: 20px;
+}
+.sidebar-content h3 {
+  margin-bottom: 15px;
+}
+.sidebar-content a {
+  display: block;
+  margin: 10px 0;
+  color: #333;
+  text-decoration: none;
+}
+.close-btn {
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+
+/* Brand Logo Top Left */
+.mobile-top-logo {
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  z-index: 101;
+}
+
+
+
+/* Fixed white top navbar for WebView */
+.webview-top-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo image */
+.logo-img {
+  height: 45px;
+}
+
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ddd;
+  padding: 6px 0;
+  z-index: 1000;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-bottom-nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #555;
+  font-size: 12px;
+  text-decoration: none;
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.mobile-bottom-nav .nav-item .iconify {
+  margin-bottom: 3px;
+  transition: transform 0.3s ease;
+}
+
+/* Active tab styling */
+.mobile-bottom-nav .nav-item.active {
+  color: #4f46e5;
+  font-weight: bold;
+}
+
+.mobile-bottom-nav .nav-item.active .iconify {
+  transform: scale(1.2);
+  color: #4f46e5;
+}
+
+.mobile-top-bell {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  z-index: 101;
+}
+
+.bell-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.bell-icon .iconify {
+  font-size: 28px;
+  transition: transform 0.2s ease;
+}
+
+.bell-icon:hover .iconify {
+  transform: scale(1.15);
+  color: #4f46e5;
+}
+.category-ring {
+  position: fixed;
+  bottom: 80px;
+  left: 47%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+.ring-bubble {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: rotate(calc(var(--i) * 60deg)) translateY(-90px);
+  transform-origin: center bottom;
+  opacity: 0;
+  transition: 0.4s ease;
+  pointer-events: none;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.ring-bubble a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  text-decoration: none;
+}
+
+.category-ring.show .ring-bubble {
+  opacity: 1;
+  pointer-events: auto;
+  animation: bounceIn 0.5s ease forwards;
+}
+
+/* Entrance animation */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3) rotate(calc(var(--i) * 60deg)) translateY(-90px);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(calc(var(--i) * 60deg)) translateY(-90px);
+    opacity: 1;
+  }
+}
+body.lock-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/*------------------------------------------------------bell popup ------------------------------------------------------------------------------------------*/
+.popup-notice {
+  position: absolute;
+  top: 25px;
+  right: -10px;
+  background-color: #ffc107;
+  color: #000;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  display: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  animation: fadeInOut 4s ease-in-out forwards;
+}
+
+.popup-close {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+@keyframes fadeInOut {
+  0%   { opacity: 0; transform: translateY(-10px); }
+  10%  { opacity: 1; transform: translateY(0); }
+  90%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+.mobile-bottom-nav .nav-item.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.mobile-bottom-nav .nav-item.active .iconify {
+  color: #007bff !important;
+}
+
+/*------------------------------side bar and categories fadeout-----------------------------*/
+/* For sidebar & category ring fade effect */
+/* --- SIDEBAR ANIMATION --- */
+#accountSidebar {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+#accountSidebar.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.fade-sidebar-out {
+  transform: translateX(-50%);
+  opacity: 0 !important;
+}
+
+/* --- CATEGORY BLOOM --- */
+#categoryRing {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+#categoryRing.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.fade-category-out {
+  transform: scale(0.6);
+  opacity: 0 !important;
+}
+
+/* Add to your existing style.css */
+#accountSidebar {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+#accountSidebar.active {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+#accountSidebar.fade-sidebar-out {
+  transform: translateX(50%);
+  opacity: 0;
+}
+
+#categoryRing {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: scale(0.85);
+  opacity: 0;
+  pointer-events: none;
+}
+#categoryRing.show {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+#categoryRing.fade-category-out {
+  transform: scale(0.6);
+  opacity: 0;
+}
+
+.lock-scroll {
+  overflow: hidden;
+}
+
+
+
+
+
+#account-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  min-width: 180px;
+  max-height: 60vh;
+  overflow-y: auto;
+  z-index: 9999;
+  display: none;
+}
+
+.account-dropdown.show #account-list {
+  display: block;
+}
+
+/* Mobile fixes */
+@media (max-width: 770px) {
+  #account-list {
+    left: 90px;
+    right: 0;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: fit-content;
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+  }
+}
+
+/* Short screens fix */
+@media (max-height: 500px) {
+  #account-list {
+    max-height: 45vh;
+  }
+}
+
+
+

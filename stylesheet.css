@@ -509,21 +509,6 @@ margin: 0;
   }
 }
 
-
-/* ---------------------------------------------Bell Icon Top Right(andriod)___________________________________________________________________ */
-.mobile-top-bell {
-  position: fixed;
-  top: 10px;
-  right: 15px;
-  z-index: 101;
-}
-.bell-icon {
-  font-size: 24px;
-  cursor: pointer;
-}
-
-
-
 /* Bottom Nav */
 .mobile-bottom-nav {
   position: fixed;
@@ -613,6 +598,8 @@ a{
   right: 15px;
   cursor: pointer;
 }
+
+
 /* Brand Logo Top Left */
 .mobile-top-logo {
   position: fixed;
@@ -644,9 +631,68 @@ a{
   height: 45px;
 }
 
-/* Bell icon */
-.bell-icon {
-  font-size: 30px;
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ddd;
+  padding: 6px 0;
+  z-index: 1000;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-bottom-nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #555;
+  font-size: 12px;
   text-decoration: none;
-  color: black;
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.mobile-bottom-nav .nav-item .iconify {
+  margin-bottom: 3px;
+  transition: transform 0.3s ease;
+}
+
+/* Active tab styling */
+.mobile-bottom-nav .nav-item.active {
+  color: #4f46e5;
+  font-weight: bold;
+}
+
+.mobile-bottom-nav .nav-item.active .iconify {
+  transform: scale(1.2);
+  color: #4f46e5;
+}
+
+.mobile-top-bell {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  z-index: 101;
+}
+
+.bell-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.bell-icon .iconify {
+  font-size: 28px;
+  transition: transform 0.2s ease;
+}
+
+.bell-icon:hover .iconify {
+  transform: scale(1.15);
+  color: #4f46e5;
 }

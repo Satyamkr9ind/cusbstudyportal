@@ -969,6 +969,13 @@ body.lock-scroll {
     max-height: 45vh;
   }
 }
+/* remove highlight oon click on mobile app */
+/* Disable blue tap highlight in Android WebView */
+a, button, .nav-item, .iconify {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+}
 
 
 

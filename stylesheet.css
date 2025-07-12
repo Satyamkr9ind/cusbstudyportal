@@ -618,7 +618,7 @@ a{
 /* Brand Logo Top Left */
 .mobile-top-logo {
   position: fixed;
-  top: 10px;
+  top: 7px;
   left: 15px;
   z-index: 101;
 }

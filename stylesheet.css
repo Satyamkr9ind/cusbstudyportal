@@ -898,7 +898,7 @@ body.lock-scroll {
  .category-ring {
       position: fixed;
       bottom: 58px;
-      left: 40%;
+      left: 50%;
       transform: translateX(-50%);
       width: 280px;
       height: 140px;
@@ -942,3 +942,9 @@ body.lock-scroll {
       flex-direction: column;
       align-items: center;
     }
+
+a, button, .nav-item, .iconify {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+}

@@ -9,40 +9,50 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="feedcss.css">
-	
+	<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
 </head>
 <body>
-    <header>
-        <nav class="web-nav">
-            <div class="nav-container">
-                <div class="nav-links">
-                    <a href="Notes.html">NOTES</a>
-                    <a href="book.html">BOOKS</a>
-                    <a href="pyq.html">PYQ</a>
-	            <a href="Miscellaneous.html">NOTIFICATION</a>
-                    <a href="about.html">ABOUT US</a>
-                </div>
-                <div class="account-dropdown" id="account">
-                    <img src="user-solid-24.png" alt="Account" width="24" height="24">
-                    <ul id="account-list">
-                        <li><a href="https://script.google.com/macros/s/AKfycbyrJ4mQinaXn7DmJOl-PoBuWcgzYUOGIh1OkLoIKSMN4dverejZVUktzLRXdhXZsEEw9Q/exec">Sign in as admin</a></li>
-                        <li><a href="sign-up.html">Sign in as user</a></li>
-                    </ul>
-                </div>
-                <button id="menu" aria-label="Menu">
-                    <img id="menu-icon" src="menuicon.png" alt="" width="24" height="24">
-                </button>
-            </div>
-        </nav>
+  <header>
+  <nav class="web-nav">
+    <div class="nav-container">
+      
+      <!-- Navigation Links -->
+      <div class="nav-links">
+        <a href="Notes.html">NOTES</a>
+        <a href="book.html">BOOKS</a>
+        <a href="pyq.html">PYQ</a>
+        <a href="Miscellaneous.html">NOTIFICATION</a>
+        <a href="about.html">ABOUT US</a>
+      </div>
 
-        <div class="menu-content" id="menu-List">
-            <a href="Notes.html">NOTES</a>
-            <a href="book.html">BOOKS</a>
-            <a href="pyq.html">PYQ</a>
-	   <a href="Miscellaneous.html">NOTIFICATION</a>
-            <a href="about.html">ABOUT US</a>
-        </div>
-    </header>
+      <!-- Account Dropdown -->
+      <div class="account-dropdown" id="account">
+        <span id="account-icon" class="iconify" data-icon="mdi:account-outline" data-width="24" data-height="24"></span>
+        <ul id="account-list">
+          <li><a href="https://your-admin-url">Sign in as admin</a></li>
+          <li><a href="sign-up.html">Sign in as user</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu Icon -->
+      <div id="menu" aria-label="Menu">
+        <span id="menu-icon" class="iconify" data-icon="mdi:menu" data-width="24" data-height="24"></span>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Links -->
+  <div class="menu-content" id="menu-List">
+    <a href="Notes.html">NOTES</a>
+    <a href="book.html">BOOKS</a>
+    <a href="pyq.html">PYQ</a>
+    <a href="Miscellaneous.html">NOTIFICATION</a>
+    <a href="about.html">ABOUT US</a>
+  </div>
+</header>
+
 
     <main1>
         <section class="hero">
@@ -163,7 +173,106 @@ direction="left" behavior="scroll" scrollamount="7">
     <div><br><br><b>Regards</b><br>Satyam Kumar<br>MSC.CS(2024-2026),CUSB</div><br>
     </div>
     <div><b>Happy Learning !</b></div><br><br>
-    
+	    
+<!-- BEGIN: Extra Mobile UI for Android WebView only -->
+<!--  WebView UI Wrapper (only shown in Android WebView) -->
+<div id="webviewUI" style="display: none;">
+
+  <!--  Top Navbar -->
+  <div class="webview-top-navbar">
+    <div class="mobile-top-logo">
+      <a href="index.html" class="brand-logo">
+        <img src="Voult.png" alt="CUSBVoult" class="logo-img" />
+      </a>
+    </div>
+
+    <div class="mobile-top-bell">
+      <a href="Miscellaneous.html#office-notice" class="bell-icon" id="bellLink">
+        <span class="iconify" data-icon="mdi:bell-outline" data-width="28" data-height="28"></span>
+      </a>
+      <!-- Notification Popup -->
+      <div id="bellNotice" class="popup-notice">
+        <span id="bellMessage">New notifications received</span>
+        <button id="bellClose" class="popup-close">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <!--  Category Ring -->
+  <div class="category-ring" id="categoryRing">
+    <div class="ring-bubble" style="--i:0;">
+      <a href="Notes.html">
+        <span class="iconify" data-icon="material-symbols:menu-book-outline" data-width="24"></span><br>Notes
+      </a>
+    </div>
+    <div class="ring-bubble" style="--i:1;">
+      <a href="book.html">
+        <span class="iconify" data-icon="mdi:book-open-outline" data-width="24"></span><br>Book
+      </a>
+    </div>
+    <div class="ring-bubble" style="--i:2;">
+      <a href="mailto:msccs2426studymaterial@gmail.com">
+        <span class="iconify" data-icon="mdi:email-outline" data-width="24"></span><br>Contact<br>Us
+      </a>
+    </div>
+    <div class="ring-bubble" style="--i:3;">
+      <a href="https://csvidyalaya.com/">
+        <span class="iconify" data-icon="mdi:flask-outline" data-width="24"></span><br>Solved<br>Paper
+      </a>
+    </div>
+    <div class="ring-bubble" style="--i:4;">
+      <a href="Miscellaneous.html">
+        <span class="iconify" data-icon="mdi:folder-outline" data-width="24"></span><br>Misc
+      </a>
+    </div>
+    <div class="ring-bubble" style="--i:5;">
+      <a href="https://drive.google.com/drive/folders/17LoT-rVQM0wvmfzm_6lVYdh8FSTuaBm_?usp=sharing">
+        <span class="iconify" data-icon="mdi:file-document-outline" data-width="24"></span><br>Syllabus
+      </a>
+    </div>
+  </div>
+
+  <!--  Bottom Navigation -->
+  <div class="mobile-bottom-nav">
+    <a href="index.html" class="nav-item" id="nav-home">
+      <span class="iconify" data-icon="material-symbols:home-outline" data-width="24" data-height="24"></span>
+      <p>Home</p>
+    </a>
+    <a href="Notes.html" class="nav-item" id="nav-notes">
+      <span class="iconify" data-icon="material-symbols:menu-book-outline" data-width="24" data-height="24"></span>
+      <p>Notes</p>
+    </a>
+    <a href="javascript:void(0);" class="nav-item" id="categoriesBtn">
+      <span class="iconify" data-icon="material-symbols:apps" data-width="24" data-height="24"></span>
+      <p>Categories</p>
+    </a>
+    <a href="pyq.html" class="nav-item" id="nav-pyq">
+      <span class="iconify" data-icon="material-symbols:description-outline" data-width="24" data-height="24"></span>
+      <p>PYQ</p>
+    </a>
+    <a href="javascript:void(0);" class="nav-item" id="accountBtn">
+      <span class="iconify" data-icon="material-symbols:person-outline" data-width="24" data-height="24"></span>
+      <p>Account</p>
+    </a>
+  </div>
+</div>
+
+
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="accountSidebar">
+    <div class="sidebar-content">
+      <span class="close-btn" id="closeSidebar">×</span>
+      <h3>Account</h3>
+      <a href="https://script.google.com/macros/s/AKfycbyrJ4mQinaXn7DmJOl-PoBuWcgzYUOGIh1OkLoIKSMN4dverejZVUktzLRXdhXZsEEw9Q/exec">Sign in as Admin</a>
+      <a href="sign-up.html">Sign in as User</a>
+      <a href="about.html">About Us</a>
+    </div>
+  </div>
+
+</div>
+<!-- END -->
+
 
 <!--    footer start  ------------->
 <footer class="footer">

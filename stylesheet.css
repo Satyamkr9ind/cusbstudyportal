@@ -899,7 +899,7 @@ body.lock-scroll {
       position: fixed;
       bottom: 58px;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%)!important; 
       width: 280px;
       height: 140px;
       background: #ffffff;

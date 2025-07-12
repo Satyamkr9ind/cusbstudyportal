@@ -269,3 +269,17 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
 });
+
+//half circle js 
+document.addEventListener("DOMContentLoaded", function () {
+      const ring = document.getElementById("categoryRing");
+      const bubbles = ring.querySelectorAll(".ring-bubble");
+      const count = bubbles.length;
+
+      bubbles.forEach((bubble, i) => {
+        const angle = i * (180 / (count - 1)) - 90;
+        const rotate = `rotate(${angle}deg) translateY(-75px) rotate(${-angle}deg)`;
+        bubble.style.transform = rotate;
+        bubble.style.opacity = 1;
+      });
+    });

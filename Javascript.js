@@ -4,7 +4,7 @@ const isWebView = (() => {
   const ua = navigator.userAgent || "";
   const isAndroid = /Android/i.test(ua);
   const isWV = /wv/.test(ua) || /\bVersion\/[\d.]+ Mobile\b/.test(ua);
-  return true;
+  return isAndroid && isWV;
 })();
 
 // Toggle visibility for WebView-only UI

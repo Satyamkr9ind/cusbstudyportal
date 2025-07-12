@@ -42,7 +42,7 @@ if (isWebView) {
 const categoryBtn = document.getElementById("categoriesBtn");
 const categoryRing = document.getElementById("categoryRing");
 const accountBtn = document.getElementById("accountBtn");
-const closeBtn = document.getElementById("closeSidebar");
+const closeBtn1 = document.getElementById("closeSidebar");
 const sidebar = document.getElementById("accountSidebar");
 
 // === Animations ===
@@ -76,7 +76,7 @@ function closeOthers(current) {
 }
 
 // === Category Toggle ===
-if (categoryBtn && categoryRing) {
+if (categoryBtn1 && categoryRing) {
   categoryBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     const isOpen = categoryRing.classList.contains("show");

@@ -898,7 +898,7 @@ body.lock-scroll {
  .category-ring {
       position: fixed;
       bottom: 58px;
-      left: 50%;
+      left: 30%;
       transform: translateX(-50%);
       width: 280px;
       height: 140px;

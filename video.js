@@ -900,7 +900,6 @@ document.getElementById('authCloseBtn').addEventListener('click', () => {
   document.body.classList.remove('modal-open');  // Unlock scroll on popup close
 });
 
-// Submit login/signup and unlock scroll after success
 function submitAuth() {
   const name = document.getElementById('authName').value.trim();
   const email = document.getElementById('authEmail').value.trim();
@@ -924,8 +923,8 @@ function submitAuth() {
     if (res.status === 'success') {
       user = { name: res.name || name, email };
       access = true;
+      localStorage.setItem('user', JSON.stringify(user)); // ✅ Save session
       document.getElementById('authPopup').style.display = 'none';
-      document.body.classList.remove('modal-open');  // Unlock scroll after successful login/signup
       renderHeader();
       fetchVideos();
     } else {
@@ -934,6 +933,24 @@ function submitAuth() {
   })
   .catch(() => alert("Error communicating with server."));
 }
+
+
+
+
+// Restore session if available
+const storedUser = localStorage.getItem('user');
+if (storedUser) {
+  try {
+    user = JSON.parse(storedUser);
+    access = true;
+    renderHeader();
+  } catch (e) {
+    console.error('Invalid user data in localStorage');
+  }
+}
+
+fetchVideos();
+
 
 window.onload = init;
 function init() {
@@ -952,6 +969,10 @@ function init() {
 function logout() {
   user = null;
   access = false;
+  localStorage.removeItem('user'); // clears session
   renderHeader();
   fetchVideos();
 }
+
+
+s

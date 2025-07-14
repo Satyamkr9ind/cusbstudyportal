@@ -1,0 +1,557 @@
+/* Reset and base */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  box-sizing: border-box;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 1.6em;
+  color: #333;
+  text-align: center;
+}
+
+/* User box (avatar, details, buttons) */
+.user-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  gap: 10px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+.user-email {
+  font-size: 12px;
+  color: #666;
+}
+
+.logout-btn {
+  background: #e53935;
+  border: none;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background: #c62828;
+}
+
+.upload-btn {
+  padding: 8px 14px;
+  background: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 50px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.upload-btn:hover {
+  background: #155fa0;
+}
+
+/* Main content */
+.main-content {
+  margin-left: 18vw;
+  padding: 20px 20px 40px 20px; /* add some bottom padding */
+  margin-top: 80px; /* to clear fixed header */
+}
+
+/* Search input */
+#searchInput {
+  padding: 10px 15px;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  margin-right: 25vw; /* adjust for sidebar */
+  margin-top: 20px;
+}
+
+/* Video grid and cards */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.video-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Upload form container */
+#uploadFormContainer {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  max-width: 400px;
+  width: 90%;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+#uploadFormContainer input,
+#uploadFormContainer textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+#uploadFormContainer button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: #28a745;
+  cursor: pointer;
+}
+
+#uploadFormContainer .cancel-btn {
+  background: #999;
+  margin-left: 10px;
+}
+
+/* Auth popup */
+#authPopup {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 9999;
+  max-width: 350px;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+#authCloseBtn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+
+#authCloseBtn:hover {
+  color: #000;
+  transform: scale(1.2);
+}
+
+#authPopup input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#authPopup button {
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#authPopup p {
+  text-align: center;
+  color: blue;
+  cursor: pointer;
+}
+
+/* Buttons */
+.action-btn {
+  background: #f0f0f0;
+  border: none;
+  padding: 6px 12px;
+  margin-right: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 4px;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.action-btn:hover {
+  background: #e0e0e0;
+}
+
+.action-btn.danger {
+  color: #c62828;
+  background: #ffe5e5;
+}
+
+.btn-design {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  margin: 10px 0 10px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(25, 118, 210, 0.4);
+}
+
+.btn-design:hover {
+  background-color: #115293;
+  box-shadow: 0 4px 10px rgba(17, 82, 147, 0.6);
+}
+
+.btn-design:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.6);
+}
+
+/* Comment input */
+.comment-input {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.comment-input input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.comment-input input:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2);
+}
+
+/* Edit input */
+.edit-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+.edit-input:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2);
+}
+
+/* Video description */
+.video-description {
+  margin: 10px 0;
+  font-size: 14px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  max-height: 5.6em; /* 4 lines * 1.4 line-height */
+  transition: all 0.3s ease;
+}
+
+.video-description.expanded {
+  -webkit-line-clamp: unset;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: #1976d2;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0;
+  margin-top: 4px;
+}
+
+/* Sidebar */
+#leftSidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 15vw;
+  height: calc(100% - 60px);
+  background: #fff;
+  border-right: 1px solid #ddd;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+  overflow-y: auto;
+  padding: 16px;
+  z-index: 1000;
+}
+
+#leftSidebar h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+#topicList {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+#topicList li {
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+#topicList li:hover {
+  background: #e0e0e0;
+}
+
+/* Comment modal */
+#commentModal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+
+  /* Flexbox for centering */
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* center vertically */
+
+  padding: 20px;            /* space from edges on small screens */
+  box-sizing: border-box;
+
+  overflow-y: auto;         /* scroll if content too tall */
+}
+
+#commentModal > div {
+  width: 95vw;
+  max-width: 600px;
+  max-height: 90vh;          /* keep modal height limited */
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  box-sizing: border-box;
+
+  overflow-y: auto;          /* scroll inside modal if content overflows */
+}
+
+/* Optional: On larger screens, add side margins to limit width */
+@media (min-width: 768px) {
+  #commentModal > div {
+    width: 600px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  #commentModal > div {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 80px;
+    margin-bottom: 50px;
+  }
+}
+
+/* Search wrapper fixed below header */
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50px; /* adjust as per header */
+  width: 100%;
+  padding: 10px 0;
+  background: #f9f9f9;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Sidebar toggle button for mobile */
+#toggleSidebarBtn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 6px 10px;
+  position: fixed;
+  margin-left: -15px;
+  margin-top: 145px;
+  z-index: 1002;
+}
+
+/* Sidebar adjustments for mobile */
+@media (max-width: 768px) {
+  .sidebar, #leftSidebar {
+    display: none;
+  }
+  
+  #leftSidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    width: 70vw;
+    max-width: 280px;
+    top: 60px;
+    left: 0;
+    height: calc(100% - 60px);
+    z-index: 1001;
+  }
+  #leftSidebar.open {
+    transform: translateX(0);
+    display: block;
+  }
+  #sidebarOverlay {
+    display: none;
+  }
+  #sidebarOverlay.show {
+    display: block;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+
+  #toggleSidebarBtn {
+    display: block;
+  }
+
+  header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+  }
+
+  #searchInput {
+    margin-left: 19vw;
+  }
+}
+
+/* Video embed responsive */
+.video-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Scroll lock when modal open */
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}

@@ -4,11 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CUSB Video Platform</title>
+  <link rel="stylesheet" href="webview-style.css">
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   <link rel="stylesheet" href="video.css" />
-  <style>
+ <style>
     #uploadFormContainer {
       display: none;
-      margin-top: 15px;
+      margin-top: 35px;
       border: 1px solid #ccc;
       padding: 15px;
       max-width: 500px;
@@ -79,8 +81,101 @@
   </style>
 </head>
 <body>
-  <header>
+
+<!-- BEGIN: Extra Mobile UI for Android WebView only -->
+<!--  WebView UI Wrapper (only shown in Android WebView) -->
+<div id="webviewUI" style="display: none;">
+
+  <!--  Top Navbar 
+  <div class="webview-top-navbar">
+    <div class="mobile-top-logo">
+      <a href="index.html" class="brand-logo">
+        <img src="Voult.png" alt="CUSBVoult" class="logo-img" />
+      </a>
+    </div>
+
+    <div class="mobile-top-bell">
+      <a href="Miscellaneous.html#office-notice" class="bell-icon" id="bellLink">
+        <span class="iconify" data-icon="mdi:bell-outline" data-width="28" data-height="28"></span>
+      </a>
+      <div id="bellNotice" class="popup-notice">
+        <span id="bellMessage">New notifications received</span>
+        <button id="bellClose" class="popup-close">✕</button>
+      </div>
+    </div>
+  </div>-->
+
+  <!--  Category Ring -->	
+  <div class="category-ring" id="categoryRing">
+    <div class="ring-bubble">
+      <a href="pyq.html">
+        <span class="iconify" data-icon="material-symbols:description-outline" data-width="24"></span><br>PYQ
+      </a>
+    </div>
+    <div class="ring-bubble">
+      <a href="mailto:msccs2426studymaterial@gmail.com">
+        <span class="iconify" data-icon="mdi:email-outline" data-width="24"></span><br>Contact
+      </a>
+    </div>
+    <div class="ring-bubble">
+      <a href="https://csvidyalaya.com/">
+        <span class="iconify" data-icon="mdi:flask-outline" data-width="24"></span><br>solved <br>Paper
+      </a>
+    </div>
+    <div class="ring-bubble">
+      <a href="Miscellaneous.html">
+      <span class="iconify" data-icon="mdi:folder-outline" data-width="24"></span><br>Misc
+    </a>	  
+    </div>
+  </div>
+
+  <!--  Bottom Navigation -->
+  <div class="mobile-bottom-nav" >
+    <a href="index.html" class="nav-item" id="nav-home">
+      <span class="iconify" data-icon="material-symbols:home-outline" data-width="24" data-height="24"></span>
+      <p>Home</p>
+    </a>
+    <a href="Notes.html" class="nav-item" id="nav-notes">
+      <span class="iconify" data-icon="material-symbols:menu-book-outline" data-width="24" data-height="24"></span>
+      <p>Notes</p>
+    </a>
+    <a href="javascript:void(0);" class="nav-item" id="categoriesBtn">
+      <span class="iconify" data-icon="material-symbols:apps" data-width="24" data-height="24"></span>
+      <p>Categories</p>
+    </a>  
+    <a href="video.html" class="nav-item active" id="nav-pyq" style="display: inline-flex; flex-direction: column; align-items: center; text-decoration: none; color: black;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path d="m11.5 14.5 7-4.5-7-4.5zM8 18q-.825 0-1.412-.587T6 16V4q0-.825.588-1.412T8 2h12q.825 0 1.413.588T22 4v12q0 .825-.587 1.413T20 18zm0-2h12V4H8zm-4 6q-.825 0-1.412-.587T2 20V6h2v14h14v2zM8 4v12z"/>
+      </svg>
+      <p>Video</p>
+    </a>
+    <a href="book.html" class="nav-item" id="bookBtn">
+      <span class="iconify" data-icon="mdi:book-open-outline" data-width="24" data-height="24"></span>
+      <p>Book</p>
+    </a>	
+    <a href="javascript:void(0);" class="nav-item" id="uploadBtn">
+  <span class="iconify" data-icon="material-symbols:upload-rounded" data-width="24" data-height="24"></span>
+  <p>Upload</p>
+</a>
+
+  </div>
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar" id="accountSidebar">
+  <div class="sidebar-content">
+    <span class="close-btn" id="closeSidebar">×</span>
+    <h3>Account</h3>
+    <a href="https://script.google.com/macros/s/AKfycbyrJ4mQinaXn7DmJOl-PoBuWcgzYUOGIh1OkLoIKSMN4dverejZVUktzLRXdhXZsEEw9Q/exec">Sign in as Admin</a>
+    <a href="sign-up.html">Sign in as User</a>
+    <a href="about.html">About Us</a>
+  </div>
+</div>
+<!--END -->
+ <header>
   <div id="userInfo"></div>
+  
+
   
   <button id="toggleSidebarBtn" onclick="toggleSidebar()" aria-label="Toggle Sidebar" style="background: none; border: none; cursor: pointer;">
     <svg width="28" height="28" viewBox="0 0 100 80" fill="black" xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +186,7 @@
   </button>
 
   <button class="upload-btn" id="loginBtn" onclick="showAuthPopup()">Login</button>
-  <button class="upload-btn" id="uploadBtn" style="display:none;">Upload Video</button>
+ <button class="upload-btn" id="uploadBtn" style="display:none;">Upload Video</button>
 </header>
 
 
@@ -121,9 +216,12 @@
 
       <textarea id="uploadDescription" placeholder="Description" maxlength="400"></textarea>
       <small id="descriptionCount">400 characters remaining</small>
-
-      <button id="uploadSubmitBtn">Submit</button>
-      <button id="uploadCancelBtn" class="cancel-btn" type="button">Cancel</button>
+      <div style="display: flex;justify-content: space-evenly;">
+        <button id="uploadCancelBtn" class="cancel-btn" type="button">Cancel</button>
+        <button id="uploadSubmitBtn">Submit</button>
+      
+    </div>
+      
     </div>
   </main>
 </div>
@@ -139,6 +237,27 @@
   <p id="switchMode" onclick="toggleAuthMode()">Don't have an account? Sign up</p>
   <p id="forgotPassword" onclick="requestPassword()">Forgot Password?</p>
 </div>
+<!-- Change Password Popup -->
+<div id="changePasswordPopup" class="change-password-overlay">
+  <div class="change-password-card">
+    <h2>Update Account Info</h2>
+
+    <input type="text" id="newName" placeholder="Full Name" />
+    <input type="text" id="newMobile" placeholder="Mobile Number" />
+    <input type="email" id="changeEmail" disabled />
+    <input type="password" id="currentPassword" placeholder="Current Password" />
+    <input type="password" id="newPassword" placeholder="New Password (min 6 chars)" />
+
+    <div class="popup-buttons">
+      <button onclick="closeChangePasswordPopup()">Cancel</button>
+      <button onclick="submitChangePassword()">Update</button>
+      
+    </div>
+  </div>
+</div>
+
+
+
 <!-- Comment Modal -->
 <div id="commentModal" style="display:none; position: fixed; top:0; left:0; width: 100vw; height: 100vh; 
   background: rgba(0,0,0,0.5); z-index: 1000; overflow-y: auto;">
@@ -156,13 +275,19 @@
     function toggleSidebar() {
       const sidebar = document.getElementById("leftSidebar");
       const overlay = document.getElementById("sidebarOverlay");
-      sidebar.classList.toggle("open");
+      const mobilebottomnav=document.getElementById("uploadBtn")
+      if(sidebar.classList.toggle("open")){
+         mobilebottomnav.style.pointerEvents="none"
+      } else {
+        mobilebottomnav.style.pointerEvents="auto"
+      }
       overlay.classList.toggle("show");
+    
     }
 
 
 
-    document.getElementById('modalCloseBtn').onclick = () => {
+  document.getElementById('modalCloseBtn').onclick = () => {
   const modal = document.getElementById('videoModal');
   modal.style.display = 'none';
   document.getElementById('modalVideoContainer').innerHTML = ''; // clear video
@@ -171,7 +296,9 @@
 
   </script>
 
+  
+
    <script src="video.js"></script>
-   
+<script src="webview-script.js" defer></script>
 </body>
 </html>

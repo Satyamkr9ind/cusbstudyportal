@@ -978,28 +978,35 @@ function submitAuth() {
 
   const payload = {
     action: authMode === 'signup' ? 'signup' : 'login',
-    name, email, password, mobile
+    name,
+    email,
+    password,
+    mobile
   };
 
   fetch(API, {
     method: 'POST',
     body: JSON.stringify(payload)
   })
-  .then(res => res.json())
-  .then(res => {
-    if (res.status === 'success') {
-      user = { name: res.name || name, email };
-      access = true;
-      localStorage.setItem('user', JSON.stringify(user)); //  Save session
-      document.getElementById('authPopup').style.display = 'none';
-      document.getElementById('uploadBtn').style.display='flex';
-      renderHeader();
-      fetchVideos();
-    } else {
-      alert(res.message || 'Authentication failed.');
-    }
-  })
-  .catch(() => alert("Error communicating with server."));
+    .then(res => res.json())
+    .then(res => {
+      if (res.status === 'success') {
+        user = { name: res.name || name, email };
+        access = true;
+
+        localStorage.setItem('user', JSON.stringify(user)); // Save user info
+
+        // Hide popup and unlock scroll
+        document.getElementById('authPopup').style.display = 'none';
+        document.body.classList.remove('modal-open'); //  FIX: allow scroll again
+
+        renderHeader();   // Refresh greeting and buttons
+        fetchVideos();    //  Load videos immediately
+      } else {
+        alert(res.message || 'Authentication failed.');
+      }
+    })
+    .catch(() => alert("Error communicating with server."));
 }
 
 

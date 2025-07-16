@@ -567,10 +567,8 @@ header h1 {
   border: none;
   font-size: 24px;
   cursor: pointer;
-  padding: 6px 10px;
+  padding : 175px 10px 0px ;
   position: fixed;
-  margin-left: -15px;
-  margin-top: 145px;
   z-index: 1002;
 }
 
@@ -591,6 +589,7 @@ header h1 {
     z-index: 1001;
   }
   #leftSidebar.open {
+    
     transform: translateX(0);
     display: block;
   }
@@ -601,7 +600,7 @@ header h1 {
     display: block;
     position: fixed;
     top: 60px;
-    left: 0;
+    left: 10px;
     width: 100%;
     height: calc(100% - 60px);
     background: rgba(0, 0, 0, 0.4);
@@ -630,10 +629,7 @@ header h1 {
     margin-left: 19vw;
     margin-top: 30px;
   }
-  .search-wrapper{
-    padding: 0px 0px ;
-    top: 80px;
-  }
+
 }
 
 /* Video embed responsive */

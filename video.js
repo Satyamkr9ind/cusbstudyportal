@@ -1,4 +1,4 @@
-// ✅ Full Frontend JavaScript Code with Upload Validation
+//  Full Frontend JavaScript Code with Upload Validation
 const API = 'https://script.google.com/macros/s/AKfycby2t8hbvcGlz2eOETY5bE_Jx5bzMjtmT_V2BndpWOmdSTfdBmvqinHSt6k0Msj5d8R-/exec';
 
 let user = null, access = false, videos = [], authMode = 'login';
@@ -785,18 +785,25 @@ function renderHeader() {
   const loginBtn = document.getElementById('loginBtn');
   const uploadBtn = document.getElementById('uploadBtn');
   const userInfo = document.getElementById('userInfo');
+  const bookBtn = document.getElementById('bookBtn'); // keep your original reference
+
+  // ✅ Always fetch latest user info from localStorage
+  const user = JSON.parse(localStorage.getItem('user'));
 
   if (user) {
     loginBtn.style.display = 'none';
-    uploadBtn.style.display = 'inline-block';
+    // uploadBtn.style.display = 'inline-block';
+    bookBtn.style.display = 'none';
 
     const initial = escapeHtml(user.name[0].toUpperCase());
+
     userInfo.innerHTML = `
       <div class="user-box">
         <div class="avatar">${initial}</div>
         <div class="user-details">
-          <div class="user-name">${escapeHtml(user.name)}</div>
+          <strong>Hi, ${escapeHtml(user.name)}</strong>
           <div class="user-email">${escapeHtml(user.email)}</div>
+          <span class="changuser" onclick="openChangePasswordPopup()">Change User Detail</span>
         </div>
         <button class="logout-btn" onclick="logout()">Logout</button>
       </div>
@@ -807,6 +814,66 @@ function renderHeader() {
     userInfo.innerHTML = '';
   }
 }
+
+
+function openChangePasswordPopup() {
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (!user) return alert("User not logged in.");
+
+  // Prefill name, mobile (if available), and email (read-only)
+  document.getElementById('changeEmail').value = user.email;
+  document.getElementById('newName').value = user.name || '';
+  document.getElementById('newMobile').value = user.mobile || '';
+  document.getElementById('currentPassword').value = '';
+  document.getElementById('newPassword').value = '';
+
+  document.getElementById('changePasswordPopup').style.display = 'flex';
+}
+
+function closeChangePasswordPopup() {
+  document.getElementById('changePasswordPopup').style.display = 'none';
+}
+
+function submitChangePassword() {
+  const currentPassword = document.getElementById('currentPassword').value;
+  const newPassword = document.getElementById('newPassword').value;
+  const newName = document.getElementById('newName').value;
+  const newMobile = document.getElementById('newMobile').value;
+  const email = document.getElementById('changeEmail').value;
+
+  if (newPassword.length < 6) {
+    return alert("New password must be at least 6 characters.");
+  }
+
+  fetch(API, {
+    method: 'POST',
+    body: JSON.stringify({
+      action: 'changePassword',
+      email,
+      currentPassword,
+      newPassword,
+      newName,
+      newMobile
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    alert(data.message);
+    if (data.status === 'success') {
+      // Update localStorage with new name/mobile
+      const updatedUser = { name: newName, email, mobile: newMobile };
+      localStorage.setItem('user', JSON.stringify(updatedUser));
+      closeChangePasswordPopup();
+      renderHeader(); // optional: re-render UI
+    }
+  })
+  .catch(() => alert("Something went wrong. Please try again later."));
+}
+
+
+
+
+
 
 /* video upload character remaining */
 function updateCharCount(inputId, countId, max) {
@@ -923,8 +990,9 @@ function submitAuth() {
     if (res.status === 'success') {
       user = { name: res.name || name, email };
       access = true;
-      localStorage.setItem('user', JSON.stringify(user)); // ✅ Save session
+      localStorage.setItem('user', JSON.stringify(user)); //  Save session
       document.getElementById('authPopup').style.display = 'none';
+      document.getElementById('uploadBtn').style.display='flex';
       renderHeader();
       fetchVideos();
     } else {
@@ -956,7 +1024,7 @@ window.onload = init;
 function init() {
   renderHeader();
   fetchVideos();
-
+  
   const uploadBtn = document.getElementById('uploadBtn');
   if (uploadBtn) uploadBtn.onclick = showUploadForm;
 
@@ -975,4 +1043,4 @@ function logout() {
 }
 
 
-s
+

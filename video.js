@@ -787,13 +787,14 @@ function renderHeader() {
   const userInfo = document.getElementById('userInfo');
   const bookBtn = document.getElementById('bookBtn'); // keep your original reference
 
-  // ✅ Always fetch latest user info from localStorage
+  //  Always fetch latest user info from localStorage
   const user = JSON.parse(localStorage.getItem('user'));
 
   if (user) {
     loginBtn.style.display = 'none';
     // uploadBtn.style.display = 'inline-block';
     bookBtn.style.display = 'none';
+    uploadBtn.style.display = 'flex';
 
     const initial = escapeHtml(user.name[0].toUpperCase());
 

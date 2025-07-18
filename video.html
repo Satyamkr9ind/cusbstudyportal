@@ -275,9 +275,11 @@
     function toggleSidebar() {
       const sidebar = document.getElementById("leftSidebar");
       const overlay = document.getElementById("sidebarOverlay");
-      const mobilebottomnav=document.getElementById("uploadBtn")
+      const mobilebottomnav=document.getElementById("uploadBtn");
+      const lockupload=document.getElementById("uploadFormContainer");
       if(sidebar.classList.toggle("open")){
          mobilebottomnav.style.pointerEvents="none"
+        lockupload.style.pointerEvents='none';
       } else {
         mobilebottomnav.style.pointerEvents="auto"
       }

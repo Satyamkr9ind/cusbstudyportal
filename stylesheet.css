@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     padding: 4rem 1rem;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url('DSC01508.jpg');
+      url('DSC01508.webp');
     background-size: cover;
     background-position: center;
     color: white;
@@ -948,3 +948,4 @@ a, button, .nav-item, .iconify {
   -webkit-touch-callout: none;
   outline: none;
 }
+

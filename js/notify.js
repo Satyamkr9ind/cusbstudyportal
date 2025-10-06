@@ -27,3 +27,4 @@ window.addEventListener('load', function () {
     console.warn('Element with id "notificationContent" not found.');
   }
 });
+

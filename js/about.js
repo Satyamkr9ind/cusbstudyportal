@@ -3,17 +3,17 @@ const teamMembers = [
   {
     name: "Satyam Kumar",
     role: "Designer & Developer",
-    image: "my photo.png",
+    image: "images/my photo.png",
     social: {
       instagram: "https://www.instagram.com/satyamtheshiva",
       facebook: "https://www.facebook.com/profile.php?id=100016399607155",
-      linkedin: "https://www.linkedin.com/in/satyam-kumar-83a77b340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+      linkedin: "https://www.linkedin.com/in/satyam-kumar-a63ab7358?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     }
   },
   {
     name: "Sunny Mandal",
     role: "Resource Contributor",
-    image: "sunny.jpg",
+    image: "images/sunny.jpg",
     social: {
       instagram: "https://www.instagram.com/i_am_skr_26",
       facebook: "https://www.facebook.com/sunnykumarranjan.sunny.71",
@@ -134,7 +134,7 @@ function initNavigation() {
         menuOpen = !menuOpen;
         menuList.style.display = menuOpen ? 'block' : 'none';
         const menuIcon = document.querySelector('#menu-icon');
-        menuIcon.src = menuOpen ? 'check-box.png' : 'menuicon.png';
+        menuIcon.src = menuOpen ? 'images/check-box.png' : 'images/menuicon.png';
     });
 
     accountBtn?.addEventListener('click', () => {
@@ -180,3 +180,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   });
 });
+

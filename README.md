@@ -56,11 +56,11 @@ You cannot copy, modify, or redistribute this project without explicit permissio
 ## 👨‍💻 Author
 **Satyam Kumar**  
 - GitHub: [https://github.com/Satyamkr9ind](https://github.com/Satyamkr9ind)  
-- Email: *(optional: add your email)*  
+- Email: *satyamkr9ind@gmail.com*  
 
 ---
 
-## 🎯 Future Improvements *(Optional for internship appeal)*
+## 🎯 Future Improvements 
 - Full login functionality on the web version.  
 - Integration of video lectures on the web platform.  
 - Enhanced search and filtering for study materials.  

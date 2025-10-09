@@ -22,7 +22,6 @@
 .account-link {
     position: relative;
 }
-
 .login-dropdown {
     position: absolute;
     top: 100%;
@@ -383,3 +382,4 @@ button:hover {
         justify-content: center;
     }
 }
+

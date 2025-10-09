@@ -8,7 +8,6 @@
   --border: #e2e8f0;
   --hover-bg: #f1f5f9;
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -948,5 +947,6 @@ a, button, .nav-item, .iconify {
   -webkit-touch-callout: none;
   outline: none;
 }
+
 
 
